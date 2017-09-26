@@ -1,0 +1,8 @@
+bool gasPrediction(std::vector<double> driveDistances, double currentGasLevel, double avgMileage) {
+	double a;
+  for(double b:driveDistances)a+=b;
+  a/=avgMileage;
+  a/=12;
+  return a>currentGasLevel;
+}
+

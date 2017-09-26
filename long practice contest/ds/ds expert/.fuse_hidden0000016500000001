@@ -1,0 +1,138 @@
+#include <cstdio>
+#include <algorithm>
+#include <vector>
+#include <utility>
+#define MIN(X,Y) X<Y?X:Y
+#define MAX(X,Y) X>Y?X:Y
+#define ISNUM(a) ('0'<=(a) && (a)<='9')
+#define ISCAP(a) ('A'<=(a) && (a)<='Z')
+#define ISSML(a) ('a'<=(a) && (a)<='z')
+#define ISALP(a) (ISCAP(a) || ISSML(a))
+
+
+using namespace std;
+typedef pair<int,int> rng;
+struct info{
+    int tot;
+    int blocked;
+    info(){
+        tot=0;
+        blocked=0;
+    }
+    info(int a,int b){
+        tot=a;
+        blocked=b;
+    }
+};
+
+info seg[30000005];
+vector<rng>post;
+
+void init(int b, int e, int node){
+    //cout<<"aschi\n";
+    //cout<<b1<<" "<<b2<<" "<<e1<<" "<<e2<<" "<<node<<"\n";
+    if(b==e){
+        seg[node].tot=1;
+        seg[node].blocked=0;
+        return;
+    }
+    if(b>e)return;
+    else{
+  //  printf("in node %d, range %d to %d\n",node,b,e);
+        int lt=node<<1;
+        int rt=lt+1;
+        int mid=(b+e)>>1;
+        init(b,mid,lt);
+        init(mid+1,e,rt);
+        seg[node].tot=seg[lt].tot+seg[rt].tot;
+        seg[node].blocked=0;
+        return;
+    }
+}
+
+void propagatebelow(int node,int b, int e){
+    if(b<e){
+        int ll=node<<1;
+        int rr=ll+1;
+        seg[ll].blocked|=seg[node].blocked;
+        seg[rr].blocked|=seg[node].blocked;
+    }
+}
+
+void update(int i, int j, int b,int e, int node){
+    if(b>e)return;
+    propagatebelow(node,b,e);
+    if(b>=i && e<=j){
+        seg[node].blocked=1;
+        propagatebelow(node,b,e);
+        return;
+    }
+    if(e<i || b>j){
+        return;
+    }
+    //if(b1>e1 || b2>e2)return;
+    int lt=node<<1;
+    int rt=lt+1;
+    int mid=(b+e)>>1;
+    update(i,j,b,mid,lt);
+    update(i,j,mid+1,e,rt);
+    seg[node].tot=seg[lt].tot+seg[rt].tot;
+    return;
+}
+
+info query(int i, int j, int b, int e, int node){
+    if(b>e)return info(0,0);
+    propagatebelow(node,b,e);
+    if(b>=i && e<=j){
+        info nw=seg[node];
+       // nw.add(propval);
+        nw.tot=nw.tot*nw.blocked;
+        return nw;
+    }
+    if(e<i || b>j){
+        return info(0,0);
+    }
+    info ans;
+    //int prop=seg[node].lazyval;
+    int lt=node<<1;
+    int rt=lt+1;
+    int mid=(b+e)>>1;
+    info lans=query(i,j,b,mid,lt);
+    info rans=query(i,j,mid+1,e,rt);
+    ans.tot=lans.tot+rans.tot;
+    return ans;
+}
+
+int main(){
+    int t;
+    scanf("%d",&t);
+    while(t--){
+        int n;
+        scanf("%d",&n);
+
+      //  scanf("%d",&q);
+        post.clear();
+        int mx=-1;
+        for(int i=1;i<=n;++i){
+            int l,r;
+            scanf("%d %d",&l,&r);
+            post.push_back(make_pair(l,r));
+            if(r>mx){
+                mx=r;
+            }
+        }
+        init(1,mx+2,1);
+        int total=0;
+        for(int i=n-1;i>=0;--i){
+            int l=post[i].first;
+            int r=post[i].second;
+            info sz=query(l,r,1,mx+2,1);
+            if(sz.tot<(r-l+1)){
+                total++;
+            }
+            update(l,r,1,mx+2,1);
+        }
+        printf("%d\n",total);
+    }
+    return 0;
+}

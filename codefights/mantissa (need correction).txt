@@ -1,0 +1,30 @@
+int obtainMaxNumber(std::vector<int> inputArray) {
+
+  int result = 0;
+  std::map<int, int> cnt;
+  std::vector<int> mantissa;
+
+  for (int i = 0; i < inputArray.size(); i++) {
+    int value = inputArray[i];
+    while (value % 2 == 0) {
+      value /= 2;
+    }
+    if (!cnt.count(value)) {
+      mantissa.push_back(value);
+      cnt[value] = 0;
+    }
+    cnt[value] += inputArray[i] / value;
+  }
+
+  for (int i = 0; i < mantissa.size(); i++) {
+    int exponent = 0,
+        power = 1;
+    while (power * 2 <= cnt[ mantissa[i] ]) {
+      exponent += 1;
+      power *= 2;
+    }
+    result = std::max(result, mantissa[i] * int(pow(2, exponent)));
+  }
+  return result;
+}
+

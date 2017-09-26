@@ -1,0 +1,26 @@
+int validRoute(std::vector<int> travelTimes,
+               std::vector<int> readyTimes, std::vector<int> cancelTimes) {
+
+  int earliestStartTime = 0;
+  int latestStartTime = 24 * 60 * 60;
+  int totalWorkTime = 0;
+  for (int i = 0; i < readyTimes.size(); i++) {
+    if (i > 0) {
+      totalWorkTime += travelTimes[i - 1];
+    }
+
+    if (earliestStartTime + totalWorkTime > cancelTimes[i]) {
+      return -1;
+    }
+    latestStartTime = std::min(latestStartTime,
+        cancelTimes[i] - totalWorkTime);
+    if (latestStartTime + totalWorkTime < readyTimes[i]) {
+      totalWorkTime = readyTimes[i] - latestStartTime;
+    }
+    earliestStartTime = std::max(earliestStartTime,
+        readyTimes[i] - totalWorkTime);
+  }
+
+  return totalWorkTime;
+}
+

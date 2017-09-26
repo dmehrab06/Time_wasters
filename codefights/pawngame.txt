@@ -1,0 +1,42 @@
+std::string pawnRace(std::string white, std::string black, char toMove) {
+  int wHor = white[1] - '0';
+  int wVert = white[0] - 'a';
+  int bHor = black[1] - '0';
+  int bVert = black[0] - 'a';
+  if (wVert == bVert && wHor < bHor) {    
+    return "draw";          
+  }
+  if (std::abs(wVert - bVert) != 1 || wHor >= bHor) {
+    int wRest = std::min(8 - wHor, 5);
+    int bRest = std::min(bHor - 1, 5);
+    if (wRest < bRest || wRest == bRest && toMove == 'w') {
+      return "white";
+    }
+    return "black";
+  }
+  int winningPairs[4][2] = {{2, 5}, {2, 6}, {3, 6}, {4, 7}};
+  if (toMove == 'w') {
+    for (int i = 0; i < 4; i++) {
+      if (wHor == winningPairs[i][0] && bHor == winningPairs[i][1]) {
+        return "white";
+      }
+    }
+    if (wHor == bHor + 1) {
+    if (wHor + 1 == bHor) {
+      return "white";
+    }
+    return "black";
+  }
+  else {
+    for (int i = 0; i < 4; i++) {
+      if (wHor == 9 - winningPairs[i][1] && bHor == 9 - winningPairs[i][0]) {
+        return "black";
+      }
+    }
+    if (wHor + 1 == bHor) {
+      return "black";
+    }
+    return "white";
+  }
+}
+

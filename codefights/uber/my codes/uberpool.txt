@@ -1,0 +1,14 @@
+int uberPool(std::vector<int> A, std::vector<int> B, std::vector<int> C, std::vector<int> X, std::vector<int> Y) {
+	int ab=std::abs(A[0]-B[0])+std::abs(A[1]-B[1]);
+  int ac=std::abs(A[0]-C[0])+std::abs(A[1]-C[1]);
+  int xc=std::abs(X[0]-C[0])+std::abs(C[1]-X[1]);
+  int xb=std::abs(X[0]-B[0])+std::abs(X[1]-B[1]);
+  int yc=std::abs(Y[0]-C[0])+std::abs(Y[1]-C[1]);
+  int yb=std::abs(Y[0]-B[0])+std::abs(Y[1]-B[1]);
+  int x=ac+xc+xb;
+  int y=ac+yc+yb;
+  if(x>2*ab && y>2*ab)return -1;
+  return y<x?2:1;
+  
+}
+

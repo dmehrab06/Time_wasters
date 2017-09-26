@@ -1,0 +1,1537 @@
+day 1
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 2
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 3
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 4
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 5
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 6
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 7
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 8
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 9
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 10
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 11
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 12
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 13
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 14
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 15
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 16
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 17
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 18
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 19
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 20
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 21
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 22
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 23
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 24
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 25
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 26
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 27
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 28
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 29
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 30
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 31
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 32
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 33
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 34
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 35
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 36
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 37
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 38
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 39
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 40
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 41
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 42
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 43
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 44
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 45
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 46
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 47
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 48
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 49
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 50
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 51
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 52
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 53
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 54
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 55
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 56
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 57
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 58
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 59
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 60
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 61
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 62
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 63
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 64
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 65
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 66
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 67
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 68
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 69
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 70
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 71
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 72
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 73
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 74
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 75
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 76
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 77
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 78
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 79
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 80
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 81
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 82
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 83
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 84
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 85
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 86
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 87
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 88
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 89
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 90
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 91
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 92
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 93
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 94
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 95
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 96
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 97
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 98
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 99
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 100
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 101
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 102
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 103
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 104
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 105
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 106
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 107
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 108
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 109
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 110
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 111
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 112
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 113
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 114
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 115
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 116
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 117
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 118
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 119
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 120
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 121
+at node  0: 0 1 2 3 4 5 6 7 8 9 10 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 122
+at node  0: 0 4 5 6 10 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 123
+at node  0: 0 1 2 3 10 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 124
+at node  0: 0 10 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 125
+at node  0: 0 1 2 3 4 5 6 7 8 9 
+at node  1: 1 4 5 7 
+at node  2: 2 6 8 9 10 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 10 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 126
+at node  0: 0 4 5 6 
+at node  1: 1 7 
+at node  2: 2 8 9 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 10 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+day 127
+at node  0: 0 1 2 3 
+at node  1: 1 4 5 
+at node  2: 2 6 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 7 
+at node  6: 6 8 9 
+at node  7: 7 
+at node  8: 8 10 
+at node  9: 9 
+at node  10: 10 
+day 128
+at node  0: 0 
+at node  1: 1 
+at node  2: 2 
+at node  3: 3 
+at node  4: 4 
+at node  5: 5 
+at node  6: 6 
+at node  7: 7 
+at node  8: 8 
+at node  9: 9 
+at node  10: 10 
+

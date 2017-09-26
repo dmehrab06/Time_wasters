@@ -1,0 +1,27 @@
+std::vector<int> howManyLines(std::vector<int> X, std::vector<int> Y) {
+
+  std::vector<int> result;
+  for (int i = 1; i < X.size(); i++) {
+    result.push_back(0);
+  }
+
+  for (int i = 0; i < X.size(); i++) {
+    for (int j = i + 1; j < X.size(); j++) {
+      int A = Y[i] - Y[j],
+          B = X[j] - X[i],
+          C = - A * X[i] - B * Y[i],
+          countPoints = 0;
+      for (int k = 0; k < X.size(); k++) {
+        if (A * X[k] + B * Y[k] + C == 0) {
+          countPoints++;
+        }
+      }
+      result[countPoints - 2]++;
+    }
+  }
+  for (int i = 0; i < X.size() - 1; i++) {
+    result[i] /=  (i+1)*(i+2)/2 ;
+  }
+  return result;
+}
+

@@ -1,0 +1,35 @@
+double perfectCity(std::vector<double> departure,
+                     std::vector<double> destination) {
+  double result = 0;
+  for (int i = 0; i < 2; i++) {
+    if ( floor(departure[i]) == floor(destination[i]) ) {
+      double floorSum = departure[i] - floor(departure[i]);
+      floorSum += destination[i] - floor(destination[i]);
+      if (floorSum < 1) {
+        result += floorSum;
+        departure[i] = floor(departure[i]);
+        destination[i] = floor(destination[i]);
+      }
+      else {
+        result += 2 - floorSum;
+        departure[i] = ceil(departure[i]);
+        destination[i] = ceil(destination[i]);
+      }
+    }
+    else {
+      if (departure[i] > destination[i]) {
+        std::vector<double> tmp = destination;
+        destination = departure;
+        departure = tmp;
+      }
+      result += ceil(departure[i]) - departure[i];
+      departure[i] = ceil(departure[i]);
+      result += destination[i] - floor(destination[i]);
+      destination[i] = floor(destination[i]);
+    }
+    result += destination[i] - departure[i];
+  }
+
+  return result;
+}
+

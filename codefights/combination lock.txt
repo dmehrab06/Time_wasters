@@ -1,0 +1,43 @@
+int secretCode(std::vector<bool> a) {
+
+  struct Helper {
+
+    int combCnt;
+    std::vector<bool> used;
+    std::vector<bool> a;
+
+    Helper(std::vector<bool> a) : combCnt(0), used(10, false), a(a) {
+    }
+
+    void calcCombinations(int curIndex) {
+
+      int needToPlace = 0;
+      for (int i = 0; i < //10; i++) {
+        if (a[i] && !used[i]) {
+          needToPlace++;
+        }
+      }
+      if (needToPlace > 8 - curIndex) {
+        return;
+      }
+      if (curIndex == 8) {
+        combCnt++;
+        return;
+      }
+
+      int first = curIndex == 0 ? 1 : 0;
+      for (int i = first; i < 10; i++) {
+        if (a[i]) {
+          bool old = used[i];
+          used[i] = true;
+          calcCombinations(curIndex + 1);
+          used[i] = old;
+        }
+      }
+    }
+  };
+
+  Helper h(a);
+  h.calcCombinations(0);
+  return h.combCnt;
+}

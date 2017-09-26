@@ -1,0 +1,22 @@
+std::vector<int> ans,multiplicationOfBigNumbers(int base, std::vector<int> a, std::vector<int> b) {
+    int pa=1;
+    int pb=1;
+   long long int sa=0;
+    int sb=0;
+    for(int i=a.size()-1;i>=0;--i){
+        sa+=a[i]*pa;
+        pa*=base;
+    }
+    for(int i=b.size()-1;i>=0;--i){
+        sb+=b[i]*pb;
+        pb*=base;
+    }
+    long long int mul=sa*sb;
+    while(mul){
+        ans.push_back(mul%base);
+        mul/=base;
+    }
+    std::reverse(ans.begin(),ans.end());
+    return ans;
+}
+

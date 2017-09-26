@@ -1,0 +1,10 @@
+std::string fancyRide(int l, std::vector<double> fares) {
+	std::vector<std::string>cars;
+  cars.push_back("UberX");
+  cars.push_back("UberXL");
+  cars.push_back("UberPlus");
+  cars.push_back("UberBlack");
+  cars.push_back("UberSUV");
+  for(int i=4;i>=0;--i)if(fares[i]*l<=20)return cars[i];
+}
+

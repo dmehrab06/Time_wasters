@@ -1,0 +1,9 @@
+int commonCharacterCount(std::string s1, std::string s2) {
+    std::vector<int>s11(26,0);std::vector<int>s22(26,0);
+    for(char c:s1)s11[c-'a']++;
+    for(char c:s2)s22[c-'a']++;
+    int r=0;
+    for(int i=0;i<26;++i)r+=std::min(s11[i],s22[i])
+;
+return r;}
+

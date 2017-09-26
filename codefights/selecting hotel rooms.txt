@@ -1,0 +1,41 @@
+typedef std::vector<std::pair<std::string, int>> HashMap;
+std::vector<std::string> roomBooking(int M, std::vector<std::string> operations) {
+  struct Helper {
+    int calculateHash(std::string name) {
+      int result = 0;
+      for (int i = 0; i < name.size(); i++) {
+        result += int(name[i]);
+      }
+      return result;
+    }
+  };
+  Helper h;
+  HashMap hashMap(M, std::make_pair("", -1));
+  std::vector<std::string> answer;
+  for (int i = 0; i < operations.size(); i++) {
+    std::string name = operations[i].substr(1);
+    int hash = h.calculateHash(name),
+        pos = hash % M;
+    if (operations[i][0] == '+') {
+      while (hashMap[pos].second != -1) {
+        pos = (pos + 1) % M;
+      }
+      hashMap[pos] = std::make_pair(name, hash);
+    }
+    else {
+      while (hashMap[pos].second != hash
+          || hashMap[pos].first != name) {
+        pos = (pos + 1) % M;
+      }
+      hashMap[pos] = std::make_pair("", 0);
+      hashMap[pos] = std::make_pair("", -1);
+    }
+  }
+  for (int i = 0; i < M; i++) {
+    if (hashMap[i].second != -1) {
+      answer.push_back(hashMap[i].first);
+    }
+  }
+  return answer;
+}
+

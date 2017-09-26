@@ -1,0 +1,33 @@
+int mx=1,zigzag(std::vector<int> a) {
+    for(int i=0;i<a.size();++i){
+        for(int j=i;j<a.size();++j){
+            std::vector<int>t;
+            for(int k=i;k<=j;++k){
+                t.push_back(a[k]);
+            }
+            int f=1;
+            if(t.size()==1)continue;
+            if(t.size()==2){
+                if(t[0]==t[1]){
+                    f=0;
+                }
+            }
+            else{
+                for(int k=1;k<t.size()-1;++k){
+                    if(!(t[k]<t[k-1] && t[k]<t[k+1] || t[k]>t[k-1] && t[k]>t[k+1])){
+                        f=0;
+                        break;
+                    }
+                }
+            }
+            if(f){
+                if(t.size()>mx){
+                    mx=t.size();
+                }
+            }
+            
+        }
+    }
+    return mx;
+}
+

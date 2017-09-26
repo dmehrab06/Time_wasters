@@ -1,0 +1,29 @@
+std::vector<std::string> a,repeatedSubstring(std::string inputString, int k) {
+    for(int i=0;i<inputString.size();++i){
+        std::string r="";
+        for(int j=i;j<i+k;++j){
+            r+=inputString[j];
+        }
+        for(int l=i+1;l<inputString.size();++l){
+            std::string p="";
+            for(int j=l;j<l+k;++j){
+                p+=inputString[j];
+            }
+            if(p==r){
+                int f=1;
+                for(int ii=0;ii<a.size();++ii){
+                    if(a[ii]==r){
+                        f=0;
+                        break;
+                    }
+                }
+                if(f==1){
+                    a.push_back(r);
+                    break;
+                }
+            }
+        }
+    }
+    return a;
+}
+

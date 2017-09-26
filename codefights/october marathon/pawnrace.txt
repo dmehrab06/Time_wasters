@@ -1,0 +1,62 @@
+std::string pawnRace(std::string white, std::string black, char toMove) {
+    if(white[0]==black[0])return "draw";
+    if(white[0]+1==black[0] || white[0]-1==black[0]){
+        if(white[1]=='2' && black[1]=='7'){
+            if(toMove=='w')return "black";
+            else{
+                return "white";
+            }
+        }
+        else if(white[1]=='2'){
+            if(black[1]<='4'){
+                return "black";
+             }
+            else{
+                return "white";
+            }
+        }
+        else if(black[1]=='7'){
+            if(white[1]>='5'){
+                return "white";
+             }
+            else{
+                return "black";
+            }
+        }
+        else{
+            if(black[1]<=white[1]){
+                int whitedis='8'-white[1];
+                int blackdis=black[1]-'1';
+                if(whitedis)
+            }
+        }
+    }
+    else{
+        int whitedis='8'-white[1];
+        int blackdis=black[1]-'1';
+        if(whitedis==blackdis){
+            if(toMove=='b')return "black";
+            else{
+                return "white";
+            }
+        }
+        else{
+            if(whitedis>blackdis){
+                if(white[1]=='3' && blac[1]=='7' && toMove=='b'){
+                    return "black";
+                }
+                else{
+                    return "white";
+                }
+            }
+            else{
+                if(white[1]=='2' && blac[1]=='6' && toMove=='w'){
+                    return "white";
+                }
+                else{
+                    return "black";
+                }
+            }
+        }
+    }
+}

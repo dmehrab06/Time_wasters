@@ -1,0 +1,171 @@
+10
+in 10, 4
+in xi=1
+1th bit from left 0
+1th bit from right 1
+extracting from left 5
+extracting from right 2
+in 5, 3
+in xi=1
+1th bit from left 1
+1th bit from right 1
+extracting from left 2
+extracting from right 1
+in 2, 2
+ar delete kora jabe na
+lft nia pamu 1
+in 1, 2
+ar delete kora jabe na
+rgt nia pamu 1
+in xi=2
+2th bit from left 0
+2th bit from right 0
+extracting from left 3
+extracting from right 3
+in 3, 2
+ar delete kora jabe na
+lft nia pamu 0
+in 3, 2
+ar delete kora jabe na
+rgt nia pamu 0
+in xi=3
+3th bit from left 1
+3th bit from right 1
+extracting from left 1
+extracting from right 2
+in 1, 2
+ar delete kora jabe na
+lft nia pamu 1
+in 2, 2
+ar delete kora jabe na
+rgt nia pamu 1
+lft nia pamu 0.666667
+in 2, 3
+in xi=1
+1th bit from left 0
+1th bit from right 0
+extracting from left 1
+extracting from right 2
+in 1, 2
+ar delete kora jabe na
+lft nia pamu 0
+in 2, 2
+ar delete kora jabe na
+rgt nia pamu 0
+in xi=2
+2th bit from left 1
+2th bit from right 1
+extracting from left 0
+extracting from right 0
+in 0, 2
+ar delete kora jabe na
+lft nia pamu 1
+in 0, 2
+ar delete kora jabe na
+rgt nia pamu 1
+in xi=3
+3th bit from left 0
+3th bit from right 0
+extracting from left 2
+extracting from right 1
+in 2, 2
+ar delete kora jabe na
+lft nia pamu 0
+in 1, 2
+ar delete kora jabe na
+rgt nia pamu 0
+rgt nia pamu 1.33333
+in xi=2
+2th bit from left 1
+2th bit from right 0
+extracting from left 4
+extracting from right 6
+in 4, 3
+in xi=1
+1th bit from left 0
+1th bit from right 1
+extracting from left 2
+extracting from right 0
+in 2, 2
+ar delete kora jabe na
+lft nia pamu 0
+in 0, 2
+ar delete kora jabe na
+rgt nia pamu 1
+in xi=2
+2th bit from left 0
+2th bit from right 0
+extracting from left 2
+extracting from right 2
+in 2, 2
+ar delete kora jabe na
+lft nia pamu 0
+in 2, 2
+ar delete kora jabe na
+rgt nia pamu 0
+in xi=3
+3th bit from left 1
+3th bit from right 0
+extracting from left 0
+extracting from right 2
+in 0, 2
+ar delete kora jabe na
+lft nia pamu 1
+in 2, 2
+ar delete kora jabe na
+rgt nia pamu 0
+lft nia pamu 1.66667
+in 6, 3
+in xi=1
+1th bit from left 0
+1th bit from right 1
+extracting from left 3
+extracting from right 2
+in 3, 2
+ar delete kora jabe na
+lft nia pamu 0
+in 2, 2
+ar delete kora jabe na
+rgt nia pamu 1
+in xi=2
+2th bit from left 1
+2th bit from right 1
+extracting from left 2
+extracting from right 2
+in 2, 2
+ar delete kora jabe na
+lft nia pamu 1
+in 2, 2
+ar delete kora jabe na
+rgt nia pamu 1
+in xi=3
+3th bit from left 1
+3th bit from right 0
+extracting from left 2
+extracting from right 3
+in 2, 2
+ar delete kora jabe na
+lft nia pamu 1
+in 3, 2
+ar delete kora jabe na
+rgt nia pamu 0
+rgt nia pamu 1
+in xi=3
+3th bit from left 0
+3th bit from right 1
+extracting from left 6
+extracting from right 4
+in 6, 3
+lft nia pamu 1
+in 4, 3
+rgt nia pamu 1.66667
+in xi=4
+4th bit from left 1
+4th bit from right 0
+extracting from left 2
+extracting from right 5
+in 2, 3
+lft nia pamu 1.33333
+in 5, 3
+rgt nia pamu 0.666667
+1.500000

@@ -1,0 +1,30 @@
+bool reverseToSort(std::vector<int> inputArray) {
+    int lrange,rrange;
+    int flag=1;
+    for(int i=1;i<inputArray.size();i++){
+        if(inputArray[i]<inputArray[i-1]){
+            if(flag){
+                flag=0;
+            int lrange=i-1;
+            int rrange=i-1;
+            for(int j=i;j<inputArray.size();++j){
+                if(inputArray[j]>inputArray[j-1]){
+                    break;
+                }
+                else{
+                    rrange++;
+                }
+            }
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    std::sort(inputArray.begin(),inputArray.end());
+    for(int i=1;i<inputArray.size();++i){
+        if(inputArray[i]==inputArray[i-1])return false;
+    }
+    return true;
+}
+

@@ -1,0 +1,13 @@
+int candles(int A, int B) {
+    int s=A;
+    int l=A;
+    while(l>=B){
+        
+        s+=l/B;
+        int t=l/B;
+        l=l%B+t;
+    }
+    return s;
+    
+}
+

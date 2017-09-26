@@ -1,0 +1,185 @@
+rick
+trying for planet 7
+rick in 7
+morty in 1
+rick in 4
+morty in 6
+rick in 1
+morty in 3
+rick in 6
+morty in 0
+rick win from state 6  by choosing 2
+rick in 1
+ageo eiram state e aschilo
+morty no way of win  from 3 
+morty in 4
+rick in 7
+ageo eiram state e aschilo
+rick in 2
+morty in 4
+ageo eiram state e aschilo
+morty in 5
+rick in 0
+morty win from state 5  by choosing 3
+morty in 6
+ageo eiram state e aschilo
+morty in 0
+rick win from state 2  by choosing 6
+morty no way of win  from 4 
+morty in 5
+morty in 7
+rick in 2
+rick in 5
+morty in 7
+ageo eiram state e aschilo
+morty in 0
+rick win from state 5  by choosing 3
+morty no way of win  from 7 
+rick no way of win  from 1 
+rick in 4
+ageo eiram state e aschilo
+morty no way of win  from 6 
+morty in 7
+morty in 0
+rick win from state 4  by choosing 4
+rick in 7
+ageo eiram state e aschilo
+morty no way of win  from 1 
+morty in 2
+rick in 5
+rick in 0
+morty win from state 2  by choosing 6
+morty in 3
+morty in 5
+rick no way of win  from 7 
+trying for planet 6
+rick in 6
+trying for planet 5
+rick in 5
+trying for planet 4
+rick in 4
+trying for planet 3
+rick in 3
+morty in 5
+morty in 6
+morty in 7
+morty in 1
+rick no way of win  from 3 
+trying for planet 2
+rick in 2
+trying for planet 1
+rick in 1
+trying for planet 7
+rick in 7
+morty in 1
+ageo eiram state e aschilo
+rick may loop from state 7  by choosing 2
+morty in 2
+morty in 3
+ageo eiram state e aschilo
+rick may loop from state 7  by choosing 4
+morty in 5
+rick is going for loop from 7 
+trying for planet 6
+rick in 6
+trying for planet 5
+rick in 5
+trying for planet 4
+rick in 4
+trying for planet 3
+rick in 3
+morty in 5
+morty in 6
+ageo eiram state e aschilo
+rick may loop from state 3  by choosing 3
+morty in 7
+ageo eiram state e aschilo
+rick may loop from state 3  by choosing 4
+morty in 1
+ageo eiram state e aschilo
+rick may loop from state 3  by choosing 6
+rick is going for loop from 3 
+trying for planet 2
+rick in 2
+trying for planet 1
+rick in 1
+morty in 3
+ageo eiram state e aschilo
+rick may loop from state 1  by choosing 2
+morty in 4
+ageo eiram state e aschilo
+rick may loop from state 1  by choosing 3
+morty in 5
+morty in 7
+ageo eiram state e aschilo
+rick may loop from state 1  by choosing 6
+rick is going for loop from 1 
+Loop Win Loop Win Win Win Loop 
+morty
+trying for planet 7
+morty in 7
+rick in 2
+morty in 4
+rick in 7
+morty in 1
+rick in 4
+morty in 6
+rick in 1
+morty in 3
+rick in 6
+morty in 0
+rick win from state 6  by choosing 2
+rick in 1
+ageo eiram state e aschilo
+morty no way of win  from 3 
+morty in 4
+ageo eiram state e aschilo
+morty in 5
+rick in 0
+morty win from state 5  by choosing 3
+morty in 7
+ageo eiram state e aschilo
+rick no way of win  from 1 
+rick in 4
+ageo eiram state e aschilo
+morty no way of win  from 6 
+morty in 7
+ageo eiram state e aschilo
+morty in 0
+rick win from state 4  by choosing 4
+rick in 7
+ageo eiram state e aschilo
+morty no way of win  from 1 
+morty in 2
+rick in 5
+morty in 7
+ageo eiram state e aschilo
+morty in 0
+rick win from state 5  by choosing 3
+rick in 0
+morty win from state 2  by choosing 6
+morty in 3
+morty in 5
+rick no way of win  from 7 
+rick in 2
+ageo eiram state e aschilo
+morty no way of win  from 4 
+morty in 5
+morty in 6
+morty in 0
+rick win from state 2  by choosing 6
+rick in 5
+morty no way of win  from 7 
+trying for planet 6
+morty in 6
+trying for planet 5
+morty in 5
+trying for planet 4
+morty in 4
+trying for planet 3
+morty in 3
+trying for planet 2
+morty in 2
+trying for planet 1
+morty in 1
+Win Win 

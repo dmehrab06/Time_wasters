@@ -1,0 +1,26 @@
+int closestSequence3(std::vector<int> a, std::vector<int> b) {
+    
+  struct Helper {
+    const int Infinity = INT_MAX;
+    std::vector<int> a, b;
+
+    Helper(std::vector<int> A, std::vector<int> B) {
+      a = A;
+      b = B;
+    }
+
+    int recursiveSearch(int posA, int posB, int diff) {
+      if (posA == a.size()) {
+        return diff;
+      }
+      if (posB == a.size()) {
+        return Infinity;
+      }
+      return std::min(recursiveSearch(posA, posB + 1, diff),
+                      recursiveSearch(posA + 1, posB + 1, 
+                                      diff + std::abs(a[posA] - b[posB])));
+    }
+  };
+  Helper h = Helper(a, b);
+  return h.recursiveSearch(0, 0, 0);
+}

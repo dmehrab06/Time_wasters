@@ -1,0 +1,61 @@
+typedef std::map<std::string, std::string>::iterator it_type;
+bool plagiarismCheck(std::vector<std::string> code1, std::vector<std::string> code2) {
+    std::map<std::string,std::string>copy;
+    std::vector<std::string>wordlist1;
+    std::vector<std::string>wordlist2;
+    std::string symbol1="";
+    std::string symbol2="";
+    for(std::string a:code1){
+        std::string t=a;
+        std::string pp="";
+        int varstartflag=0;
+        for(int i=0;i<t.size();++i){
+            if(t[i]>='a' && t[i]<='z' || t[i]>='A' && t[i]<='Z' || t[i]=='_'){
+                varstartflag=1;
+            }
+            if(t[i]>='a' && t[i]<='z' || t[i]>='A' && t[i]<='Z' || t[i]=='_' || t[i]>='0' && t[i]<='9' && varstartflag==1){
+                pp+=t[i];
+            }
+            else{
+                varstartflag=0;
+                wordlist1.push_back(pp);
+                symbol1+=t[i];
+            }
+        }
+        if(pp.size()>0)wordlist1.push_back(pp);
+    }
+    for(std::string a:code2){
+        std::string t=a;
+        std::string pp="";
+        int varstartflag=0;
+        for(int i=0;i<t.size();++i){
+            if(t[i]>='a' && t[i]<='z' || t[i]>='A' && t[i]<='Z' || t[i]=='_'){
+                varstartflag=1;
+            }
+            if(t[i]>='a' && t[i]<='z' || t[i]>='A' && t[i]<='Z' || t[i]=='_' || t[i]>='0' && t[i]<='9' && varstartflag==1){
+                pp+=t[i];
+            }
+            else{
+                varstartflag=0;
+                wordlist2.push_back(pp);
+                symbol2+=t[i];
+            }
+        }
+        if(pp.size()>0)wordlist2.push_back(pp);
+    }
+    if(wordlist1.size() != wordlist2.size())return false;
+    else if(symbol1!=symbol2)return false;
+    else{
+        for(int i=0;i<wordlist1.size();++i){
+            std::string tt=wordlist1[i];
+            if(copy.find(tt)==copy.end()){
+                copy[tt]=wordlist2[i];
+            }
+            else{
+                if(copy[tt]!=wordlist2[i])return false;
+            }
+        }
+        return true;
+    }
+}
+

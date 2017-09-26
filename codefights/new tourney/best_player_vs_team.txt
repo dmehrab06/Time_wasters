@@ -1,0 +1,101 @@
+CREATE OR REPLACE
+PROCEDURE BEST_PLAYER_VS_TEAM
+( against_team IN VARCHAR2
+, for_team IN VARCHAR2
+, playernm OUT VARCHAR2
+, totgoals OUT VARCHAR2
+) AS
+curbestplayer VARCHAR2(40);
+curbestgoal NUMBER;
+curmplayed number;
+tmatch number;
+club1id number;
+club2id number;
+nowseason  number;
+nowclubid number;
+giventeamid number;
+mplayed number;
+nowgoals number;
+flag NUMBER;
+forteamid NUMBER;
+BEGIN
+  curbestgoal:=-1;
+  curmplayed:=0;
+  curbestplayer:='nai';
+  if for_team='nil' then
+    for R in (SELECT * from player) loop
+     nowgoals:=0;
+     mplayed:=0;
+     flag:=0;
+      for RR in (select * from match_perf where playerid=R.playerid) loop
+        tmatch:=RR.matchid;
+         select homeid, awayclubid, seasonid into club1id, club2id, nowseason from match where matchid=tmatch;
+         select clubid into nowclubid from  seasonstat where playerid=R.playerid and seasonid=nowseason;
+         select clubid into giventeamid  from club where clubname= against_team;
+         if nowclubid!=giventeamid then
+          if club1id= giventeamid then
+          nowgoals:=nowgoals+RR.goalscored;
+          mplayed:= mplayed+1;
+          flag:=1;
+          elsif club2id= giventeamid then
+          nowgoals:=nowgoals+RR.goalscored;
+          mplayed:= mplayed+1;
+          flag:=1;
+          end if;
+         end if;
+      end loop;
+      if flag=1 then
+        if nowgoals> curbestgoal THEN
+          curbestgoal:= nowgoals;
+          select playername into curbestplayer from player where playerid=R.playerid;
+          curmplayed:= mplayed;
+        elsif nowgoals= curbestgoal then
+          if mplayed< curmplayed then
+            curbestgoal:= nowgoals;
+            select playername into curbestplayer from player where playerid=R.playerid;
+            curmplayed:= mplayed;
+          end if;
+        end if;
+      end if;
+    end loop;
+  else
+    SELECT clubid into forteamid from club where clubname= for_team;
+    for R in (SELECT * from player) loop
+     nowgoals:=0;
+     mplayed:=0;
+     flag:=0;
+      for RR in (select * from match_perf where playerid=R.playerid) loop
+        tmatch:=RR.matchid;
+         select homeid, awayclubid, seasonid into club1id, club2id, nowseason from match where matchid=tmatch;
+         select clubid into nowclubid from  seasonstat where playerid=R.playerid and seasonid=nowseason;
+         select clubid into giventeamid  from club where clubname= against_team;
+         if nowclubid!=giventeamid then
+          if club1id= giventeamid and club2id= forteamid then
+          nowgoals:=nowgoals+RR.goalscored;
+          mplayed:= mplayed+1;
+          flag:=1;
+          elsif club2id= giventeamid and club1id= forteamid then
+          nowgoals:=nowgoals+RR.goalscored;
+          mplayed:= mplayed+1;
+          flag:=1;
+          end if;
+         end if;
+      end loop;
+      if flag=1 then
+        if nowgoals> curbestgoal THEN
+          curbestgoal:= nowgoals;
+          select playername into curbestplayer from player where playerid=R.playerid;
+          curmplayed:= mplayed;
+        elsif nowgoals= curbestgoal then
+          if mplayed< curmplayed then
+            curbestgoal:= nowgoals;
+            select playername into curbestplayer from player where playerid=R.playerid;
+            curmplayed:= mplayed;
+          end if;
+        end if;
+      end if;
+    end loop;
+  end if;
+  playernm:= curbestplayer;
+  totgoals:= curbestgoal;
+END BEST_PLAYER_VS_TEAM;

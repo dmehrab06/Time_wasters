@@ -1,0 +1,18 @@
+int mx=-99999999,maxSubmatrixSum(std::vector<std::vector<int>> matrix, int n, int m) {
+    for(int i=0;i+n-1<matrix.size();++i){
+        for(int j=0;j+m-1<matrix[0].size();++j){
+            int startx=i;
+            int starty=j;
+            int s=0;
+            for(int x=startx;x<=startx+n-1;++x){
+                for(int y=starty;y<=starty+m-1;++y){
+                    s+=matrix[x][y];
+                }
+            }
+            
+            mx=std::max(mx,s);
+        }
+    }
+    return mx;
+}
+

@@ -1,0 +1,18 @@
+int maximumSum(std::vector<int> A, std::vector<std::vector<int>> Q) {
+    std::sort(A.begin(),A.end());
+    int mx=-1;
+   
+    int l=A.size();
+  while ( std::next_permutation(A.begin(),A.begin()+l)) {
+      int s=0;
+      for(int i=0;i<Q.size();++i){
+          
+          for(int j=Q[i][0];j<=Q[i][1];++j){
+              s+=A[j];
+          }
+          if(s>mx)mx=s;
+      }
+  }  
+    return mx;
+}
+

@@ -1,0 +1,34 @@
+int bfsDistancesUnweightedGraph2(std::vector< std::vector< bool > > matrix, int vertex1, int vertex2) {
+        struct H{
+        std::vector<std::vector<bool>> g;
+            std::vector<int> dis;
+            std::vector<bool> vis;
+        H(std::vector<std::vector<bool>> matrix){
+            g=matrix;
+            for(int i=0;i<matrix.size();++i){
+                dis.push_back(0);
+                vis.push_back(false);
+            }
+        }
+            void set(int v){
+                dis[v]=-1;
+            }
+        void dfs(int now, int par){
+            dis[now]=dis[par]+1;
+            vis[now]=true;
+            for(int i=0;i<g[now].size();++i){
+                if(g[now][i] && !vis[i]){
+                    dfs(i,now);
+                }
+            }
+        }
+            int get(int v2){
+                return dis[v2];
+            } 
+    };
+    H h(matrix);
+    h.set(vertex1);
+    h.dfs(vertex1,vertex1);
+    return h.get(vertex2);
+}
+

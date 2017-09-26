@@ -1,0 +1,42 @@
+std::vector<int> ans,borderSums(std::vector<std::vector<int>> matrix) {
+    int tleftr=0;
+    int tleftc=0;
+    int trightr=0;
+    int trightc=matrix.size()-1;
+    int bleftr=matrix.size()-1;
+    int bleftc=0;
+    int brightr=matrix.size()-1;
+    int brightc=matrix.size()-1;
+    int sz=matrix.size();
+    int todo=sz/2;
+    while(todo){
+        int s=0;
+        for(int i=tleftc;i<=trightc;++i){
+            s+=matrix[tleftr][i];
+        }
+        for(int i=tleftr;i<=bleftr;++i){
+            s+=matrix[i][tleftc];
+        }
+        for(int i=bleftc;i<=brightc;++i){
+            s+=matrix[bleftr][i];
+        }
+        for(int i=trightr;i<=brightr;++i){
+            s+=matrix[i][brightc];
+        }
+        s-=matrix[tleftr][tleftc];
+        s-=matrix[bleftr][bleftc];
+        s-=matrix[trightr][trightc];
+        s-=matrix[brightr][brightc];
+        ans.push_back(s);
+        todo--;
+        tleftr++;
+        tleftc++;
+        bleftr--;
+        bleftc++;
+        trightr++;
+        trightc--;
+        brightc--;
+        brightr--;
+    }
+    return ans;
+}

@@ -1,0 +1,31 @@
+int ispal(std::string str){
+    int f=1;
+    for(int i=0;i<str.size();++i){
+        if(str[i]!=str[str.size()-1-i])f=0;
+    }
+    return f;
+}
+std::string buildPalindrome(std::string str) {
+    int f=1;
+    for(int i=0;i<str.size();++i){
+        if(str[i]!=str[str.size()-1-i])f=0;
+    }
+    if(f){
+        return str;
+    }
+    int i;
+    for(i=0;i<str.size();++i){
+        std::string temp="";
+        for(int j=i;j<str.size();++j){
+            temp+=str[j];
+        }
+        if(ispal(temp)){
+            break;
+        }
+    }
+    for(int k=i-1;k>=0;--k){
+        str+=str[k];
+    }
+    return str;
+}
+

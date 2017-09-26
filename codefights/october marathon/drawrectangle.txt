@@ -1,0 +1,33 @@
+std::vector<std::vector<char>> drawRectangle(std::vector<std::vector<char>> canvas, std::vector<int> rectangle) {
+    canvas[rectangle[1]][rectangle[0]]='*';
+    canvas[rectangle[1]][rectangle[2]]='*';
+    canvas[rectangle[3]][rectangle[0]]='*';
+    canvas[rectangle[3]][rectangle[2]]='*';
+    int i=rectangle[1]+1;
+    int j=rectangle[0];
+    while(i<rectangle[3]){
+        canvas[i][j]='|';
+        i++;
+    }
+    i=rectangle[1]+1;
+    j=rectangle[2];
+    while(i<rectangle[3]){
+        canvas[i][j]='|';
+        i++;
+    }
+    i=rectangle[1];
+     j=rectangle[0]+1;
+    while(j<rectangle[2]){
+        canvas[i][j]='-';
+        j++;
+    }
+     i=rectangle[3];
+     j=rectangle[0]+1;
+    while(j<rectangle[2]){
+        canvas[i][j]='-';
+        j++;
+    }
+    return canvas;
+    
+}
+

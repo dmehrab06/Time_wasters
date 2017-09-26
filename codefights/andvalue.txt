@@ -1,0 +1,38 @@
+int largestSubset(std::vector<int> a, int bound) {
+
+  struct Helper {
+    int bound;
+    std::vector<int> a;
+
+    Helper(int boundValue, std::vector<int>& aValue) {
+      bound = boundValue;
+      a = aValue;
+    }
+
+    int bruteForce(int andValue, int step, int subsetSize) {
+      if (step == a.size()) {
+        if (andValue >= bound) {
+          return subsetSize;
+        }
+        else {
+          return 0;
+        }
+      }
+      else {
+        int maxRes = bruteForce(andValue, step + 1, subsetSize),
+            nextStepAndValue =  a[step] ;
+        if (andValue != -1) {
+          nextStepAndValue &= andValue;
+        }
+        maxRes = std::max(maxRes,
+            bruteForce(nextStepAndValue, step + 1, subsetSize + 1));
+        return maxRes;
+      }
+    }
+  };
+
+  Helper h = Helper(bound, a);
+
+  return h.bruteForce(-1, 0, 0);
+}
+

@@ -1,0 +1,30 @@
+std::string concatenationProcess(std::vector<std::string> init) {
+    while(init.size()>1){
+        int min1=0;
+        int min2=init.size()-1;
+        for(int i=1;i<init.size();++i){
+            if(init[i].size()<init[min1].size()){
+                min1=i;
+            }
+        }
+        if(min1==min2)min2--;
+        for(int i=init.size()-2;i>=0;--i){
+            if(init[i].size()<init[min2].size() && min1!=i){
+                min2=i;
+            }
+        }
+        std::vector<std::string>tmp;
+        std::string t="";
+        t+=init[min1];
+        t+=init[min2];
+        for(int i=0;i<init.size();++i){
+            if(i!=min1 && i!=min2){
+                tmp.push_back(init[i]);
+            }
+        }
+       
+        tmp.push_back(t);
+        init=tmp;
+    }
+    return  init[0];
+}

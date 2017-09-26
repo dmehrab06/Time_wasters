@@ -1,0 +1,28 @@
+std::string mx="",queuePhoto(std::vector<int> times, std::vector<std::string> colors) {
+   // int start=times[0];
+    //for(int i=0;i<times.size();++i){
+       // times[i]-=start;
+    //}
+    int mxl,mxr,mxlen=-1;
+    for(int i=0;i<times.size();i++){
+        int j=i;
+        int thisentertime=std::max(times[i]-times[i]%5+5,(i+1)*5);
+        for(;j<times.size();++j){
+            if(times[j]>=thisentertime){
+                break;
+            }
+            
+        }
+        if((j-i)>mxlen){
+            mxlen=j-i;
+            mxl=i;
+            mxr=j-1;
+        }
+        
+    }
+    for(int i=mxl;i<=mxr;++i){
+        mx+=colors[i];
+    }
+    return mx;
+}
+

@@ -1,0 +1,23 @@
+int runnersMeetings(std::vector<int> startPosition, std::vector<int> speed) {
+    int mx=1;
+    for(int i=0;i<startPosition.size();++i){
+        for(int j=i+1;j<startPosition.size();++j){
+            
+            int a=startPosition[i];
+            int b=startPosition[j];
+            int c=speed[i];
+            int d=speed[j];
+            if((a-b)*(d-c)<=0)continue;
+            if(d==c)continue;
+            int meet=2;
+            for(int k=j+1;k<startPosition.size();++k){
+                  int bb=startPosition[k];
+                int dd=speed[k];
+                if((a-b)*(d-dd)==(d-c)*(bb-b))meet++;
+            }
+            if(meet>mx)mx=meet;
+        }
+    }
+    return mx;
+}
+

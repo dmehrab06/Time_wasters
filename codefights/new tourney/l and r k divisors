@@ -1,0 +1,18 @@
+int divNumber(int k, int l, int r) {
+    int c=0;
+    for(int i=l;i<=r;++i){
+        int j=2;
+        int d=2;
+        for(;j*j<=i;++j){
+            if(i%j==0){
+                d+=2;
+            }
+            if(d>k+1)break;
+        }
+        j--;
+        if(j*j==i)d-=1;
+        if(d==k)c++;
+    }
+    return c;
+}
+

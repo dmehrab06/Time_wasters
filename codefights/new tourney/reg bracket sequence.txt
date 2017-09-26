@@ -1,0 +1,25 @@
+bool regularBracketSequence2(std::string sequence) {
+    std::vector<int>fb;
+    //std::vector<int>sb;
+    std::vector<int>tb;
+    for(char c:sequence){
+        if(c=='('){
+            fb.push_back(1);
+        }
+        if(c=='['){
+            tb.push_back(1);
+        }
+        if(c==')'){
+            if(fb.size()==0)return false;
+            fb.pop_back();
+        }
+        if(c==']'){
+            if(tb.size()==0)return false;
+            tb.pop_back();
+        }
+    }
+    if(fb.size() || tb.size())return false;
+    return true;
+    
+}
+

@@ -1,0 +1,22 @@
+int treeLCA(std::vector<int> parent, int v1, int v2) {
+    std::vector<int>p1;
+    std::vector<int>p2;
+    p1.push_back(v1);
+    p2.push_back(v2);
+    while(parent[v1]!=v1){
+        p1.push_back(parent[v1]);
+        v1=parent[v1];
+    }
+    while(parent[v2]!=v2){
+        p2.push_back(parent[v2]);
+        v2=parent[v2];
+    }
+    int ans=-1;
+    for(int i=p1.size()-1;i>=0;--i){
+        for(int j=p2.size()-1;j>=0;--j){
+            if(p1[i]==p2[j]){ans=p1[i];break;}
+        }
+    }
+    return ans;
+}
+

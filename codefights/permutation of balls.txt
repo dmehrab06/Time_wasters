@@ -1,0 +1,38 @@
+int ballPermutations(int N, int M, int K) {
+
+  /*
+   * dp[n][m][k][last] - number of desired permutations for n, m, k balls
+   * of given colors, (last == 1) means that the last ball is blue,
+   * otherwise (last == 0).
+   */
+  typedef std::vector<int> v1d;
+  typedef std::vector<v1d> v2d;
+  typedef std::vector<v2d> v3d;
+  typedef std::vector<v3d> v4d;
+  v4d dp(N + 1, v3d(M + 1, v2d(K + 1, v1d(2, 0))));
+  dp[0][0][0][0] = 1;
+
+  for (int cnt = 0; cnt < N + M + K; cnt++) {
+    for (int n = 0; n <= std::min(N, cnt); n++) {
+      for (int m = 0; m <= std::min(M, cnt - n); m++) {
+        int k = cnt - n - m;
+        if (k > K) {
+          continue;
+        }
+        if (n < N) {
+          dp[n + 1][m][k][0] += dp[n][m][k][0] + dp[n][m][k][1];
+        }
+        if (m < M) {
+          dp[n][m + 1][k][1] += dp[n][m][k][0];
+        }
+        if (k < K) {
+          dp[n][m][k + 1][0] += dp[n][m][k][0] + dp[n][m][k][1];
+        }
+      }
+    }
+  }
+
+  return dp[N][M][K][0];
+  return dp[N][M][K][0] + dp[N][M][K][1];
+}
+

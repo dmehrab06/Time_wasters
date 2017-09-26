@@ -1,0 +1,22 @@
+std::string longestWord(std::string text) {
+    std::string ans="";
+    for(int i=0;i<text.size();++i){
+        if('A'<=text[i] && text[i]<='Z' || 'a'<=text[i] && text[i]<='z'){
+            std::string tmp="";tmp+=text[i];
+            int j=i+1;
+            for(;j<text.size();++j){
+                if('A'<=text[j] && text[j]<='Z' || 'a'<=text[j] && text[j]<='z'){
+                    tmp+=text[j];
+                }
+                else{
+                    break;
+                }
+            }
+            if(tmp.size()>ans.size()){
+                ans=tmp;
+            }
+            i=j-1;
+        }
+    }
+    return ans;
+}

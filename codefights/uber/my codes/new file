@@ -1,0 +1,16 @@
+bool crossroads(std::vector<int> road1, std::vector<int> road2, int crossTime) {
+  for(int i=0;i<road1.size();++i){
+    for(int j=0;j<road2.size();++j){
+      if(road2[j]<road1[i]){
+        if(road2[j]+crossTime>road1[i]){
+        	return true;
+        }
+      }
+      else{
+      	if(road1[i]+crossTime>road2[j])return true;
+      }
+    }
+  }
+  return false;
+}
+

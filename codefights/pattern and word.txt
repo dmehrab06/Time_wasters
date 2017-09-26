@@ -1,0 +1,40 @@
+int wordGuessingGame(std::vector<std::string> words) {
+  struct Helper {
+    std::vector<std::string> words;
+
+    Helper(const std::vector<std::string> words) : words(words) {}
+
+    bool match(int mask) {
+      std::set<std::string> patterns;
+      for (int i = 0; i < words.size(); i++) {
+        std::string pattern = "";
+        for (int j = 0; j < words[0].size(); j++) {
+          if ((mask & (1 << j)) > 0) {
+            pattern += words[i][j];
+          }
+        }
+        patterns.insert(pattern);
+      }
+      return words.size()==patterns.size() ;
+    }
+
+    int findWinningTurn(int mask) {
+      for (int j = 0; j < words[0].size(); j++) {
+        if ((mask & (1 << j)) > 0) {
+          continue;
+        }
+        if (match(mask | (1 << j))) {
+          return j;
+        }
+        int turn = findWinningTurn(mask | (1 << j));
+        if (turn == -1) {
+          return j;
+        }
+      }
+      return -1;
+    }
+  };
+
+  Helper h = Helper(words);
+  return h.findWinningTurn(0);
+}

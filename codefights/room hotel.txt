@@ -1,0 +1,60 @@
+
+int Hash(std::string name, int M){
+    int s=0;
+    for(int c:name){
+        s+=c;
+        s%=M;
+    }
+    return s;
+}
+std::vector<std::string> ans,roomBooking(int M, std::vector<std::string> operations) {
+        std::vector<int>room(M,0);
+    std::vector<std::string>roomguest(M);
+    for(int i=0;i<operations.size();++i){
+        std::string cur=operations[i];
+        std::string name="";
+        for(int k=1;k<cur.size();++k){
+            name+=cur[k];
+        }
+        if(cur[0]=='-'){
+            for(int j=0;j<roomguest.size();++j){
+                if(roomguest[j]==name){
+                    room[j]=0;
+                }
+            }
+        }
+        else if(cur[0]=='+'){
+            int f=Hash(name,M);
+            if(room[f]==0){
+                room[f]=1;
+                roomguest[f]=name;    
+            }
+            else if(room[f]==1){
+                int fl=1;
+                for(int ll=f;ll<room.size();++ll){
+                    if(room[ll]==0){
+                        fl=0;
+                        room[ll]=1;
+                        roomguest[ll]=name;
+                        break;
+                    }
+                }
+                if(fl){
+                    for(int ll=0;ll<room.size();++ll){
+                        if(room[ll]==0){
+                        
+                        room[ll]=1;
+                        roomguest[ll]=name;
+                        break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    for(int i=0;i<room.size();++i){
+        if(room[i]==1)ans.push_back(roomguest[i]);
+    }
+    return ans;
+}
+

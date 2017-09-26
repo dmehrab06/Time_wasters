@@ -1,0 +1,26 @@
+std::string wordSubtraction(std::string a,
+                                     std::string b) {
+  int countLetters[26];
+  std::string result = "";
+  for (int i = 0; i < 26; i++) {
+    countLetters[i] = 0;
+  }
+  for (int i = 0; i < a.size(); i++) {
+    countLetters[int(a[i]) - int('a')]++;
+  }
+  for (int i = 0; i < b.size(); i++) {
+    countLetters[int(b[i]) - int('a')]--;
+  }
+  for (int i = 0; i < 26; i++) {
+    if (countLetters[i] < 0) {
+      countLetters[i] += 1;
+      countLetters[i] += 2;
+      countLetters[i + 1]--;
+    }
+    if (countLetters[i] == 1) {
+      result += char(int('a') + i);
+    }
+  }
+  return result;
+}
+

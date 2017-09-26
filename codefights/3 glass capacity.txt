@@ -1,0 +1,53 @@
+int threeGlasses(std::vector<int> cap) {
+
+  struct Helper {
+    typedef std::vector<bool> vec1d;
+    typedef std::vector<vec1d> vec2d;
+    typedef std::vector<vec2d> vec3d;
+    vec3d was;
+    std::set<int> wasCnt;
+    std::queue<std::vector<int>> queue;
+
+    Helper(std::vector<int> & cap) {
+      was = vec3d(cap[0] + 1, vec2d(cap[1] + 1, vec1d(cap[2] + 1, false)));
+    }
+
+    void tryAdd(std::vector<int> & a) {
+      if (!was[ a[0] ][ a[1] ][ a[2] ]) {
+        was[ a[0] ][ a[1] ][ a[2] ] = true;
+        wasCnt.insert(a[0] + a[1] + a[2]);
+        queue.push(a);
+     }
+    }
+  };
+  Helper h(cap);
+
+  h.tryAdd(cap);
+  while (h.queue.size()) {
+    std::vector<int> cur = h.queue.front();
+    h.queue.pop();
+    for (int i = 0; i < 3; i++) {
+      std::vector<int> next = cur;
+      next[i] = 0;
+      h.tryAdd(next);
+
+      for (int j = 0; j < 3; j++) {
+        if (i != j && cur[i] + cur[j] > cap[j]) {
+          next = cur;
+          next[i] -=  cap[j]-cur[j] ;
+          next[j] = cap[j];
+          h.tryAdd(next);
+        } else if (i != j) {
+          next = cur;
+          next[j] += next[i];
+          next[i] = 0;
+          h.tryAdd(next);
+        }
+      }
+    }
+  }
+
+  return (int)h.wasCnt.size() - 1;
+}
+
+

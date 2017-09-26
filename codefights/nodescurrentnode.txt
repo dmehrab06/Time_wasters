@@ -1,0 +1,44 @@
+int uniqueSubstringsTrie(std::string input) {
+
+  typedef std::vector<std::vector<int>> Array2D;
+
+  struct Helper {
+    Array2D addNode(Array2D lastVersion, std::vector<int> & ends) {
+      std::vector<int> line(26, 0);
+      lastVersion.push_back(line);
+      ends.push_back(0);
+      return lastVersion;
+    }
+  };
+
+  Helper h;
+
+  int nodesCount = 1;
+  Array2D trie;
+  std::vector<int> ends;
+  trie = h.addNode(trie, ends);
+
+  for (int i = 0; i < input.size(); i++) {
+    int currentNode = 0;
+    for (int j = i; j < input.size(); j++) {
+      int symbol = input[j] - 'a';
+      if (!trie[currentNode][symbol]) {
+        trie = h.addNode(trie, ends);
+        trie[currentNode][symbol] = nodesCount;
+        nodesCount++;
+      }
+      currentNode =  nodesCount ;
+      ends[currentNode]++;
+    }
+  }
+
+  int result = 0;
+  for (int i = 0; i < nodesCount; i++) {
+    if (ends[i] == 1) {
+      result++;
+    }
+  }
+
+  return result;
+}
+

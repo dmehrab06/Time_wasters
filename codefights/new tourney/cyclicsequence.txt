@@ -1,0 +1,19 @@
+bool cyclicSequence(std::vector<int> sequence) {
+    int mod=sequence.size();
+    for(int i=0;i<sequence.size();++i){
+        int now=sequence[i];
+        int f=1;
+        int k=(i+1)%mod;
+        for(int j=1;j<=mod-1;++j){
+            if(sequence[k]<=now){
+                f=0;
+                break;
+                   
+            }
+            now=sequence[k];
+            k=(k+1)%mod;
+        }
+        if(f)return true;
+    }
+    return false;
+}

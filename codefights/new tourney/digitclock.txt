@@ -1,0 +1,54 @@
+std::vector<int> clockDigitsCount(std::vector<int> startTime, std::vector<int> finishTime) {
+    std::vector<int>a(10,0);
+    while(startTime!=finishTime){
+        int p=startTime[0];
+        
+        for(int i=0;i<2;++i){
+            a[p%10]++;
+            p/=10;
+        }
+        p=startTime[1];
+        
+        for(int i=0;i<2;++i){
+            a[p%10]++;
+            p/=10;
+        }
+        p=startTime[2];
+        
+        for(int i=0;i<2;++i){
+            a[p%10]++;
+            p/=10;
+        }
+        startTime[2]++;
+        if(startTime[2]==60){
+            startTime[2]=0;
+            startTime[1]++;
+        }
+        if(startTime[1]==60){
+            startTime[0]++;
+            startTime[1]=0;
+        }
+        if(startTime[0]==24){
+            startTime[0]=0;
+        }
+    }
+        int p=startTime[0];
+        
+        for(int i=0;i<2;++i){
+            a[p%10]++;
+            p/=10;
+        }
+        p=startTime[1];
+        
+        for(int i=0;i<2;++i){
+            a[p%10]++;
+            p/=10;
+        }
+        p=startTime[2];
+        
+        for(int i=0;i<2;++i){
+            a[p%10]++;
+            p/=10;
+        }
+    return a;
+}

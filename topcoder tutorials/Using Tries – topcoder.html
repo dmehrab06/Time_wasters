@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+  <meta charset="utf-8">
+  <meta name="fragment" content="!">
+  <title>Using Tries  –  topcoder</title>
+  <meta name="description" content="">
+  <meta name="author" content="@topcoder">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script src="Using%20Tries%20%E2%80%93%20topcoder_files/fbevents.js" async=""></script><script src="Using%20Tries%20%E2%80%93%20topcoder_files/496af5ee90" type="text/javascript"></script><script src="Using%20Tries%20%E2%80%93%20topcoder_files/nr-998.js"></script><script src="Using%20Tries%20%E2%80%93%20topcoder_files/munchkin_002.js" async="" type="text/javascript"></script><script src="Using%20Tries%20%E2%80%93%20topcoder_files/analytics.js" async=""></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgEGVFNbGwYGXVZaBgQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="https://www.topcoder.com/wp-content/themes/tcs-responsive/favicon.ico">
+
+    <!-- External JS -->
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.js" type="text/javascript"></script>
+  <script src="/js/respond.min.js" type="text/javascript"></script>
+  <script src="/js/modernizr.js" type="text/javascript"></script>
+  <link rel = "stylesheet" href = "/css/ie.css ? v = 201407282" / >
+  <![endif]-->
+  <script type="text/javascript">
+    var wpUrl = "https://www.topcoder.com";
+    var tcApiRUL = 'https://api.topcoder.com/v2';
+    var myFiltersURL = '//lc1-user-settings-service.herokuapp.com';
+    var siteURL = 'https://www.topcoder.com';
+    var communityURL = '//community.topcoder.com';
+    var base_url = 'https://www.topcoder.com/wp-content/themes/tcs-responsive';
+    var stylesheet_dir = 'https://www.topcoder.com/wp-content/themes/tcs-responsive/css';
+    var autoRegister = '';
+    var timezone_string = "America/New_York";
+    var challengeType;
+    var cbApiURL = 'https://coderbits.com';
+  </script>
+
+<link rel="stylesheet" id="layerslider-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/layerslider.css" type="text/css" media="all">
+<link rel="stylesheet" id="ls-google-fonts-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="tchook-style-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/tcapi.css" type="text/css" media="all">
+<link rel="stylesheet" id="tchook-selectyze-style-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/Selectyze.css" type="text/css" media="all">
+<link rel="stylesheet" id="advanced-responsive-video-embedder-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/advanced-responsive-video-embedder-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-lightbox-fancybox-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/wp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="default-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/default.css" type="text/css" media="all">
+<link rel="stylesheet" id="page-list-style-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/page-list.css" type="text/css" media="all">
+<!-- This site uses the Yoast Google Analytics plugin v5.2.7 - Universal enabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-6340959-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('require', 'displayfeatures');
+	__gaTracker('send','pageview');
+
+</script>
+<!-- / Yoast Google Analytics --><script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/greensock.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.topcoder.com/wp-content/themes/tcs-responsive/js/vendor/jquery/jquery.js"><\/script>')</script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/layerslider.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/layerslider_002.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/jquery_002.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var rlArgs = {"script":"fancybox","selector":"lightbox","customEvents":"","activeGalleries":"0","modal":"0","showOverlay":"1","showCloseButton":"1","enableEscapeButton":"1","hideOnOverlayClick":"1","hideOnContentClick":"0","cyclic":"0","showNavArrows":"1","autoScale":"1","scrolling":"yes","centerOnScroll":"1","opacity":"1","overlayOpacity":"70","overlayColor":"#666","titleShow":"1","titlePosition":"outside","transitions":"fade","easings":"swing","speeds":"300","changeSpeed":"300","changeFade":"100","padding":"5","margin":"5","videoWidth":"1080","videoHeight":"720"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/front.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.topcoder.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.topcoder.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Disjoint-set Data Structures" href="https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/">
+<link rel="next" title="An Introduction to Multidimensional Databases" href="https://www.topcoder.com/community/data-science/data-science-tutorials/an-introduction-to-multidimensional-databases/">
+<meta name="generator" content="WordPress 3.9.1">
+<link rel="shortlink" href="https://www.topcoder.com/?p=15661">
+<meta name="google-site-verification" content="UA-6340959-1">
+<meta name="google-publisher-plugin-pagetype" content="page"><meta name="google-site-verification" content="13nbPcn6VRWD2zdq-CEG0LbT00aOwSyhofA3OAEmbEI"><meta name="google-site-verification" content="13nbPcn6VRWD2zdq-CEG0LbT00aOwSyhofA3OAEmbEI"><meta name="google-site-verification" content="13nbPcn6VRWD2zdq-CEG0LbT00aOwSyhofA3OAEmbEI"><meta name="google-site-verification" content="p0OVxcrMQ2HYDsGgaRLRS9bsXuXmjKVcTGZnXNphIUI">	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+  <style>
+    .btn, a.btn, .blogCategoryMenu a, .searchBox input, .subscribeBox input {
+      behavior: url("https://www.topcoder.com/wp-content/themes/tcs-responsive/css/PIE.htc");
+    }
+  </style>
+
+<script src="Using%20Tries%20%E2%80%93%20topcoder_files/roundtrip.js" type="text/javascript" async="true"></script><script src="Using%20Tries%20%E2%80%93%20topcoder_files/4XU6H3BYL5EQBFHZM4DIUU" type="text/javascript" async="true"></script><div style="width: 1px; height: 1px; display: inline; position: absolute;"><img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out_007.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out_006.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out_002.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out_003.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out_004.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out_005.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out.html" height="1" width="1">
+<img style="border-style:none;" alt="" src="Using%20Tries%20%E2%80%93%20topcoder_files/out.gif" height="1" width="1">
+</div></head>
+
+<body>
+
+
+<div id="wrapper" class="tcssoUsingJS">
+<div class="ng-header-bootstrap ng-scope"><div class="header-wrapper" ng-class="{'menu-visible': main.menuVisible}">
+  <header class="top-header">
+    <a href="https://www.topcoder.com/" class="logo-link"></a>
+    <div class="show-small mobile-heading"><!-- ngIf: main.menuVisible -->
+      <!-- ngIf: !main.menuVisible --><button type="button" ng-if="!main.menuVisible" ng-click="main.menuVisible = true" class="btn-open-menu ng-scope">Menu</button><!-- end ngIf: !main.menuVisible -->
+      <!-- ngIf: main.menuVisible -->
+      <!-- ngIf: !main.menuVisible --><a ng-href="" ng-switch="vm.isAuth" data-ng-if="!main.menuVisible" class="user-link ng-scope"><!-- ngSwitchWhen: true --><img ng-switch-when="true" ng-src="" class="user-avatar ng-scope"><!-- ngSwitchWhen: false --></a><!-- end ngIf: !main.menuVisible -->
+    </div>
+   <ul class="main-menu">
+      <li class="menu-item search-wrapper">
+        <div class="menu-item-header show-large">
+          <button type="button" class="btn-expand-search search-icon"></button>
+        </div>
+        <div class="submenu">
+          <input class="member-search-old-nav ng-pristine ng-valid" placeholder="find members by username or skill" ng-model="vm.searchTerm" ng-keyup="vm.checkSubmit($event)" type="text">
+        </div>
+      </li>
+      <li ng-switch="vm.isAuth" ng-class="{'anonymous-menu': !vm.isAuth}" class="menu-item link-group user-menu">
+        <!-- ngSwitchWhen: true --><div class="ng-scope" ng-switch-when="true">
+          <div class="menu-item-header">
+            <a ng-href="" class="profile-link-dropdown">
+              <img ng-src="" class="user-avatar">
+              <span ng-style="vm.handleStyle" class="username ng-binding"></span>
+            </a>
+          </div>
+          <a href="https://www.topcoder.com/settings/profile" class="btn-link btn-edit-profile show-small">EDIT</a>
+          <ul class="submenu">
+            <!-- ngRepeat: item in vm.userMenu -->
+            <li class="submenu-item">
+              <a ng-click="vm.logout()" class="menu-link">
+                <img src="Using%20Tries%20%E2%80%93%20topcoder_files/logout.svg" ng-src="/mf/i/nav/logout.svg" class="menu-icon">
+                <div class="menu-text">LOG OUT</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- ngSwitchWhen: false -->
+      </li>
+      <!-- ngRepeat: header in vm.menuHeaders --><li ng-repeat="header in vm.menuHeaders" class="menu-item link-group ng-scope">
+        <div class="menu-item-header ng-binding">compete</div>
+        <ul class="submenu">
+          <!-- ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/challenges/design/active/?pageIndex=1" ng-click="$event.stopPropagation();" ng-href="/challenges/design/active/?pageIndex=1" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/track-design.svg" ng-src="/mf/i/nav/track-design.svg" class="menu-icon">
+              <div class="menu-text ng-binding">DESIGN CHALLENGES</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/challenges/develop/active/?pageIndex=1" ng-click="$event.stopPropagation();" ng-href="/challenges/develop/active/?pageIndex=1" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/track-develop.svg" ng-src="/mf/i/nav/track-develop.svg" class="menu-icon">
+              <div class="menu-text ng-binding">DEVELOPMENT CHALLENGES</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/challenges/data/active/?pageIndex=1" ng-click="$event.stopPropagation();" ng-href="/challenges/data/active/?pageIndex=1" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/track-data.svg" ng-src="/mf/i/nav/track-data.svg" class="menu-icon">
+              <div class="menu-text ng-binding">DATA SCIENCE CHALLENGES</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://arena.topcoder.com/" ng-click="$event.stopPropagation();" ng-href="https://arena.topcoder.com" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_blank">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/track-cp.svg" ng-src="/mf/i/nav/track-cp.svg" class="menu-icon">
+              <div class="menu-text ng-binding">COMPETITIVE PROGRAMMING</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] -->
+        </ul>
+      </li><!-- end ngRepeat: header in vm.menuHeaders --><li ng-repeat="header in vm.menuHeaders" class="menu-item link-group ng-scope">
+        <div class="menu-item-header ng-binding">learn</div>
+        <ul class="submenu">
+          <!-- ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/getting-started/" ng-click="$event.stopPropagation();" ng-href="/getting-started/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/rocket.svg" ng-src="/mf/i/nav/rocket.svg" class="menu-icon">
+              <div class="menu-text ng-binding">GETTING STARTED</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/design/" ng-click="$event.stopPropagation();" ng-href="/community/design/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/book-design.svg" ng-src="/mf/i/nav/book-design.svg" class="menu-icon">
+              <div class="menu-text ng-binding">DESIGN</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/development/" ng-click="$event.stopPropagation();" ng-href="/community/development/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/book-develop.svg" ng-src="/mf/i/nav/book-develop.svg" class="menu-icon">
+              <div class="menu-text ng-binding">DEVELOPMENT</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/data-science/" ng-click="$event.stopPropagation();" ng-href="/community/data-science/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/book-data.svg" ng-src="/mf/i/nav/book-data.svg" class="menu-icon">
+              <div class="menu-text ng-binding">DATA SCIENCE</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/competitive%20programming/" ng-click="$event.stopPropagation();" ng-href="/community/competitive%20programming/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/book-cp.svg" ng-src="/mf/i/nav/book-cp.svg" class="menu-icon">
+              <div class="menu-text ng-binding">COMPETITIVE PROGRAMMING</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] -->
+        </ul>
+      </li><!-- end ngRepeat: header in vm.menuHeaders --><li ng-repeat="header in vm.menuHeaders" class="menu-item link-group ng-scope">
+        <div class="menu-item-header ng-binding">community</div>
+        <ul class="submenu">
+          <!-- ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/members/" ng-click="$event.stopPropagation();" ng-href="/community/members/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/members.svg" ng-src="/mf/i/nav/members.svg" class="menu-icon">
+              <div class="menu-text ng-binding">OVERVIEW</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/tco" ng-click="$event.stopPropagation();" ng-href="/tco" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/tco-generic.svg" ng-src="/mf/i/nav/tco-generic.svg" class="menu-icon">
+              <div class="menu-text ng-binding">TCO</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/member-programs/" ng-click="$event.stopPropagation();" ng-href="/community/member-programs/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/programs.svg" ng-src="/mf/i/nav/programs.svg" class="menu-icon">
+              <div class="menu-text ng-binding">PROGRAMS</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://apps.topcoder.com/forums/" ng-click="$event.stopPropagation();" ng-href="https://apps.topcoder.com/forums/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/forums.svg" ng-src="/mf/i/nav/forums.svg" class="menu-icon">
+              <div class="menu-text ng-binding">FORUMS</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/statistics/" ng-click="$event.stopPropagation();" ng-href="/community/statistics/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/statistics.svg" ng-src="/mf/i/nav/statistics.svg" class="menu-icon">
+              <div class="menu-text ng-binding">STATISTICS</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/community/events/" ng-click="$event.stopPropagation();" ng-href="/community/events/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/events.svg" ng-src="/mf/i/nav/events.svg" class="menu-icon">
+              <div class="menu-text ng-binding">EVENTS</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] --><li class="submenu-item ng-scope" ng-repeat="item in vm.menuLinks[header]">
+            <a href="https://www.topcoder.com/blog/" ng-click="$event.stopPropagation();" ng-href="/blog/" ng-class="{ 'active': vm.isActive(item.href) }" class="menu-link" target="_self">
+              <img src="Using%20Tries%20%E2%80%93%20topcoder_files/blog.svg" ng-src="/mf/i/nav/blog.svg" class="menu-icon">
+              <div class="menu-text ng-binding">BLOG</div>
+            </a>
+          </li><!-- end ngRepeat: item in vm.menuLinks[header] -->
+        </ul>
+      </li><!-- end ngRepeat: header in vm.menuHeaders -->
+    </ul>
+  </header>
+</div>
+</div>
+<!-- Bugfix: I-108496 hidden element needed for non-firefox browsers to detect cache-persist status of page, used for above code to display member details -->
+<input id="cache-persist" type="hidden">
+  <!-- /#header -->
+
+<script type="text/javascript">
+	var siteurl = "https://www.topcoder.com";
+</script>
+<div class="content">
+	<div id="main">
+
+		<!-- Start Overview Page-->
+		<div class="pageTitleWrapper">
+			<div class="pageTitle container">
+				<h2 class="overviewPageTitle UsingTriesPageTitle">Using Tries</h2>
+			</div>
+		</div>
+
+
+
+
+		<article id="mainContent" class="splitLayout overviewPage">
+			<div class="container">
+				<div class="rightSplit  grid-3-3">
+					<div class="mainStream postContent pageContent grid-2-3">
+
+						    <p>
+        By&nbsp;<strong><a class="tc_coder coder" href="https://www.topcoder.com/member-profile/luison9999" style="color: #DDCC00">luison9999</a></strong>– <em>TopCoder Member</em>
+<br><a href="http://apps.topcoder.com/forums/?module=ThreadList&amp;forumID=518219">Discuss this article</a>
+    </p>
+
+    <h3>Introduction</h3>
+
+    <p>There are many algorithms and data structures to index and search
+    strings inside a text, some of them are included in the standard libraries,
+    but not all of them; the trie data structure is a good example of one that
+    isn’t.</p>
+
+    <p>Let <strong>word</strong> be a single string and let
+    <strong>dictionary</strong> be a large set of words. If we have a
+    dictionary, and we need to know if a single word is inside of the
+    dictionary the tries are a data structure that can help us. But you may be
+    asking yourself, “Why use <strong>tries</strong> if <strong>set</strong>
+    &lt;<strong>string</strong>&gt; and hash tables can do the same?” There are
+    two main reasons:</p>
+
+    <ul>
+        <li>The tries can insert and find strings in O(<em>L</em>) time (where
+        <em>L</em> represent the length of a single word). This is much faster
+        than set , but is it a bit faster than a hash table.</li>
+
+        <li>The <strong>set</strong> &lt;<strong>string</strong>&gt; and the
+        hash tables can only find in a dictionary words that match exactly with
+        the single word that we are finding; the trie allow us to find words
+        that have a single character different, a prefix in common, a character
+        missing, etc.</li>
+    </ul>
+
+    <p>The tries can be useful in TopCoder problems, but also have a great
+    amount of applications in software engineering. For example, consider a web
+    browser. Do you know how the web browser can auto complete your text or
+    show you many possibilities of the text that you could be writing? Yes,
+    with the trie you can do it very fast. Do you know how an orthographic
+    corrector can check that every word that you type is in a dictionary? Again
+    a trie. You can also use a trie for suggested <em>corrections</em> of the
+    words that are present in the text but not in the dictionary.</p>
+
+    <h3>What is a Tree?</h3>
+
+    <p>You may read about how wonderful the tries are, but maybe you don’t know
+    yet what the tries are and why the tries have this name. The word trie is
+    an infix of the word “re<strong>trie</strong>val” because the trie can find
+    a single word in a dictionary with only a prefix of the word. The main idea
+    of the trie data structure consists of the following parts:</p>
+
+    <ul>
+        <li>The trie is a tree where each vertex represents a single word or a
+        prefix.</li>
+
+        <li>The root represents an empty string (“”), the vertexes that are
+        direct sons of the root represent prefixes of length 1, the vertexes
+        that are 2 edges of distance from the root represent prefixes of length
+        2, the vertexes that are 3 edges of distance from the root represent
+        prefixes of length 3 and so on. In other words, a vertex that are
+        <em>k</em> edges of distance of the root have an associated prefix of
+        length <em>k</em>.</li>
+
+        <li>Let <strong>v</strong> and <strong>w</strong> be two vertexes of
+        the trie, and assume that <strong>v</strong> is a direct father of
+        <strong>w</strong>, then <strong>v</strong> must have an associated
+        prefix of <strong>w</strong>.</li>
+    </ul>
+
+    <p>The next figure shows a trie with the words “tree”, “trie”, “algo”,
+    “assoc”, “all”, and “also.”</p>
+
+    <div style="text-align: center"><img src="Using%20Tries%20%E2%80%93%20topcoder_files/alg_tries.png"></div>
+
+    <p>Note that every vertex of the tree does not store entire prefixes or
+    entire words. The idea is that the program should remember the word that
+    represents each vertex while lower in the tree.</p>
+
+    <h3>Coding a Trie</h3>
+
+    <p>The tries can be implemented in many ways, some of them can be used to
+    find a set of words in the dictionary where every word can be a little
+    different than the target word, and other implementations of the tries can
+    provide us with only words that match exactly with the target word. The
+    implementation of the trie that will be exposed here will consist only of
+    finding words that match exactly and counting the words that have some
+    prefix. This implementation will be pseudo code because different coders
+    can use different programming languages.</p>
+
+    <p>We will code these 4 functions:</p>
+
+    <ul>
+        <li>addWord. This function will add a single string
+        <strong>word</strong> to the dictionary.</li>
+
+        <li>countPreffixes. This function will count the number of words in the
+        dictionary that have a string <strong>prefix</strong> as prefix.</li>
+
+        <li>countWords. This function will count the number of words in the
+        dictionary that match exactly with a given string
+        <strong>word</strong>.</li>
+
+        <li>Our trie will only support letters of the English alphabet.</li>
+    </ul>
+
+    <p>We need to also code a structure with some fields that indicate the
+    values stored in each vertex. As we want to know the number of words that
+    match with a given string, every vertex should have a field to indicate
+    that this vertex represents a complete word or only a prefix (for
+    simplicity, a complete word is considered also a prefix) and how many words
+    in the dictionary are represented by that prefix (there can be repeated
+    words in the dictionary). This task can be done with only one integer field
+    words.</p>
+
+    <p>Because we want to know the number of words that have like prefix a
+    given string, we need another integer field <strong>prefixes</strong> that
+    indicates how many words have the prefix of the vertex. Also, each vertex
+    must have references to all his possible sons (26 references). Knowing all
+    these details, our structure should have the following members:</p>
+    <pre><strong>structure</strong> Trie
+    <strong>integer</strong> words;
+    <strong>integer</strong> prefixes;
+    <strong>reference</strong> edges[26];
+</pre>
+
+    <p>And we also need the following functions:</p>
+    <pre>initialize(vertex)
+addWord(vertex, word);
+<strong>integer</strong> countPrefixes(vertex, prefix);
+<strong>integer</strong> countWords(vertex, word);
+</pre>
+
+    <p>First of all, we have to initialize the vertexes with the following
+    function:</p>
+    <pre><strong>initialize</strong>(vertex)
+    vertex.words=0
+    vertex.prefixes=0
+    <strong>for</strong> i=0 <strong>to</strong> 26
+        edges[i]=NoEdge
+</pre>
+
+    <p>The addWord function consists of two parameters, the vertex of the
+    insertion and the word that will be added. The idea is that when a string
+    <strong>word</strong> is added to a vertex <strong>vertex</strong>, we will
+    add <strong>word</strong> to the corresponding branch of
+    <strong>vertex</strong> cutting the leftmost character of word. If the
+    needed branch does not exist, we will have to create it. All the TopCoder
+    languages can simulate the process of cutting a character in constant time
+    instead of creating a copy of the original string or moving the other
+    characters.</p>
+    <pre><strong>addWord</strong>(vertex, word)
+    <strong>if</strong> isEmpty(word)
+        vertex.words=vertex.words+1
+    <strong>else</strong>
+        vertex.prefixes=vertex.prefixes+1
+        k=firstCharacter(word)
+        <strong>if</strong>(notExists(edges[k]))
+            edges[k]=createEdge()
+            initialize(edges[k])
+        cutLeftmostCharacter(word)
+        addWord(edges[k], word)
+</pre>
+
+    <p>The functions countWords and countPrefixes are very similar. If we are
+    finding an empty string we only have to return the number of words/prefixes
+    associated with the vertex. If we are finding a non-empty string, we should
+    to find in the corresponding branch of the tree, but if the branch does not
+    exist, we have to return 0.</p>
+    <pre><strong>countWords</strong>(vertex, word)
+    k=firstCharacter(word)
+    <strong>if</strong> isEmpty(word)
+        return vertex.words
+    <strong>else if</strong> notExists(edges[k])
+        return 0
+    <strong>else</strong>
+        cutLeftmostCharacter(word)
+        return countWords(edges[k], word);
+
+<strong>countPrefixes</strong>(vertex, prefix)
+    k=firstCharacter(prefix)
+    <strong>if</strong> isEmpty(word)
+        return vertex.prefixes
+    <strong>else if</strong> notExists(edges[k])
+        return 0
+    <strong>else</strong>
+        cutLeftmostCharacter(prefix)
+        return countWords(edges[k], prefix)
+</pre>
+
+    <h3>Complexity Analysis</h3>
+
+    <p>In the introduction you may read that the complexity of finding and
+    inserting a trie is linear, but we have not done the analysis yet. In the
+    insertion and finding notice that lowering a single level in the tree is
+    done in constant time, and every time that the program lowers a single
+    level in the tree, a single character is cut from the string; we can
+    conclude that every function lowers <em>L</em> levels on the tree and every
+    time that the function lowers a level on the tree, it is done in constant
+    time, then the insertion and finding of a word in a trie can be done in
+    O(<em>L</em>) time. The memory used in the tries depends on the methods to
+    store the edges and how many words have prefixes in common.</p>
+
+    <h3>Other Kinds of Tries</h3>
+
+    <p>We used the tries to store words with lowercase letters, but the tries
+    can be used to store many other things. We can use bits or bytes instead of
+    lowercase letters and every data type can be stored in the tree, not only
+    strings. Let flow your imagination using tries! For example, suppose that
+    you want to find a word in a dictionary but a single letter was deleted
+    from the word. You can modify the countWords function:</p>
+    <pre><strong>countWords</strong>(vertex, word, missingLetters)
+    k=firstCharacter(word)
+    <strong>if</strong> isEmpty(word)
+        return vertex.word
+    <strong>else if</strong> notExists(edges[k]) and missingLetters=0
+        return 0
+    <strong>else if</strong> notExists(edges[k])
+        cutLeftmostCharacter(word)
+        return countWords(vertex, word, missingLetters-1)
+        <em>Here we cut a character but we don't go lower in the tree</em>
+    <strong>else</strong>
+        <em>We are adding the two possibilities: the first
+        character has been deleted plus the first character is present</em>
+        r=countWords(vertex, word, missingLetters-1)
+        cutLeftmostCharacter(word)
+        r=r+countWords(edges[k], word, missingLetters)
+        return r
+</pre>
+
+    <p>The complexity of this function may be larger than the original, but it
+    is faster than checking all the subsets of characters of a word.</p>
+
+    <h3>Problems to Practice</h3>
+
+    <p><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=3972">WordFind SRM 232</a><br>
+    <a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=8019&amp;rd=10773">SearchBox SRM
+    361</a><br>
+    <a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=7694">CyclicWords SRM 358</a><br>
+    <a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=7411">TagalogDictionary SRM
+    342</a><br>
+    <a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=6215">JoinedString SRM
+    302</a><br>
+    <a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=3490">CmpdWords SRM 268</a><br>
+    <a href="https://www.topcoder.com/longcontest/?module=ViewProblemStatement&amp;rd=10500&amp;pm=7861">Scruffle
+    2007 TCCC Marathon Online Round 1</a></p>
+<style>
+
+.formFrame { background: #f5f5f5; margin: auto; }.formFrame td { border: 1px solid #ccc; padding: 5px; }.sideNote {background: #f5f5f5; margin: 15px; padding: 15px; border: 1px solid #eee;}pre {background: #f5f5f5; margin: 15px; padding: 15px; border: 1px solid #eee; overflow: scroll;}p{padding-bottom:0 !important;}
+
+</style>					
+
+						<!-- /.pageContent -->
+
+					</div>
+					<!-- /.mainStream -->
+
+					<aside class="sideStream  grid-1-3">
+								<div class="textwidget"><div style="display: inline-block; width: 320px; height: 44px; overflow: hidden; background-color: #f1f1f1; padding:5px;">
+           <p style="padding-top: 12px; padding-left: 7px; font-size: 22px">
+    More Resources</p>
+       </div>
+
+
+	  <br>
+<p style="padding-top: 12px; padding-left: 10px; line-height: 150%"><a href="http://www.topcoder.com/community/data-science/data-science-tutorials/">Member Tutorials </a><br>
+Read more than 40 data science tutorials written by topcoder members. </p>
+<p style="padding-top: 12px; padding-left: 10px; line-height: 150%"><a href="http://www.topcoder.com/community/data-science/data-science-editorials/">Problem Set Analysis </a><br>
+Read editorials explaining the problem and solution for each Single Round Match (SRM). </p>
+<p style="padding-top: 12px; padding-left: 10px; line-height: 150%"><a href="http://www.topcoder.com/community/data-science/getting-started-in-data-science/">
+Data Science Guide</a><br>
+New to topcoder's data science track? Read this guide for an overview on
+ how to get started in the arena and how competitions work.</p>
+<p style="padding-top: 12px; padding-left: 10px; line-height: 150%"><a href="http://help.topcoder.com/">Help Center </a><br>
+Need specifics about the process or the rules? Everything you need to 
+know about competing at topcoder can be found in the Help Center.</p>
+<p style="padding-top: 12px; padding-left: 10px; line-height: 150%"><a href="http://apps.topcoder.com/forums/">Member Forums</a> <br>
+Join your peers in our member forums and ask questions from the real experts - topcoder members!</p>
+</div>
+							</aside>
+
+					<!-- /.sideStream -->
+					<div class="clear"></div>
+				</div>
+				<!-- /.rightSplit -->
+			</div>
+		</article>
+		<!-- /#mainContent -->
+<footer class="bottom-footer">
+  <!-- Footer links -->
+  <nav class="menu-item">
+    <div class="menu-item-header show-small">OTHERS</div>
+    <ul class="submenu">
+      <li class="submenu-item"><a ng-click="$event.stopPropagation();" href="https://www.topcoder.com/sitemap" class="menu-link">SITEMAP</a></li>
+      <li class="submenu-item"><a ng-click="$event.stopPropagation();" href="https://www.topcoder.com/about" class="menu-link">ABOUT US</a></li>
+      <li class="submenu-item"><a ng-click="$event.stopPropagation();" href="https://help.topcoder.com/hc/en-us/articles/219069687-Contact-Support" class="menu-link">CONTACT US</a></li>
+      <li class="submenu-item"><a ng-click="$event.stopPropagation();" href="http://help.topcoder.com/" target="_blank" class="menu-link">HELP CENTER</a></li>
+      <li class="submenu-item"><a ng-click="$event.stopPropagation();" href="http://topcoder.com/community/how-it-works/privacy-policy/" class="menu-link">PRIVACY POLICY</a></li>
+      <li class="submenu-item"><a ng-click="$event.stopPropagation();" href="http://topcoder.com/community/how-it-works/terms/" class="menu-link">TERMS</a></li>
+    </ul>
+    <!-- Social links -->
+  </nav>
+  <div class="social-links">
+    <p>Topcoder is also on</p><a href="https://www.facebook.com/topcoder" target="fbwindow" class="fb-link"></a><a href="http://www.twitter.com/topcoder" target="twwindow" class="twitter-link"></a><a href="https://www.linkedin.com/company/topcoder" target="liwindow" class="linkedin-link"></a><a href="https://plus.google.com/u/0/b/104268008777050019973/104268008777050019973/posts" target="gpwindow" class="google-link"></a>
+  </div>
+  <p class="copyright-notice">© 2016 Topcoder. All Rights Reserved</p>
+</footer>
+</div>
+<!-- /.content -->
+</div>
+<!-- /#wrapper -->
+
+
+<div id="bgModal"></div><!-- background modal -->
+<div id="bgOverlapModal"></div><!-- background modal -->
+<div id="bgLoadingModal"><span></span></div><!-- background loading -->
+<div id="thanks" class="modal">
+  <a href="javascript:;" class="closeBtn closeModal"></a>
+
+  <div class="content">
+    <h2>Thanks for joining!</h2>
+
+    <p>We have sent you an email with activation instructions.<br>If you do not receive that email within 1 hour,
+      please email <a href="mailto:support@topcoder.com">support@topcoder.com</a>.</p>
+
+    <div>
+      <a href="javascript:;" class="btn closeModal redirectOnConfirm">Close</a>
+    </div>
+  </div>
+</div><!-- END #thanks -->
+<div id="registerSuccess" class="modal">
+  <a href="javascript:;" class="btnClose closeModal"></a>
+  <div class="content">
+    <h2>Registered!</h2>
+    <p class="success">Thank you for registering. You may now download the challenge files and participate in the challenge forums.</p>
+    <p class="submitBtn">
+      <a class="btn closeModalReg" href="javascript:;">OK</a>
+    </p>
+  </div>
+</div><!-- END #registerSuccess -->
+<div id="registerFailed" class="modal">
+  <a href="javascript:;" class="btnClose closeModal"></a>
+  <div class="content">
+    <h2>Info</h2>
+    <p class="failedMessage"></p>
+    <p class="submitBtn">
+      <a class="btn closeModal" href="javascript:;">OK</a>
+    </p>
+  </div>
+</div><!-- END #registerFailed -->
+
+<div id="showSubmission" class="modal">
+    <a href="javascript:;" class="btnClose closePopupModal"></a>
+    <div class="content">
+       <img alt="" style="width:910px; height:850px">
+    </div>
+</div><!-- END #show submission -->
+
+<div id="filterSavedSuccess" class="modal">
+  <a href="javascript:;" class="btnClose closeModal"></a>
+  <div class="content">
+    <h2>Success</h2>
+    <p class="success">Your filters have been saved and stored in the "My Filters" dropdown list.</p>
+    <p class="submitBtn">
+      <a class="btn closeModal" href="javascript:;">OK</a>
+    </p>
+  </div>
+</div><!-- END #filterSavedSuccess -->
+
+<div id="filterSavedFailed" class="modal">
+  <a href="javascript:;" class="btnClose closeModal"></a>
+  <div class="content">
+    <h2>Info</h2>
+    <p class="failedMessage"></p>
+    <p class="submitBtn">
+      <a class="btn closeModal" href="javascript:;">OK</a>
+    </p>
+  </div>
+</div><!-- END #filterSavedFailed -->
+
+<div id="designSubmissionCommentExample" class="modal">
+  <a href="javascript:;" class="btnClose closeModal"></a>
+  <div class="content">
+    <h2>Comment Examples</h2>
+
+    <strong>Example 1:</strong><br>
+    The logo represents movement and "taking action" rather than being stagnant.
+    The colors I chose signify power and give the brand a strong feel.<br><br>
+
+    <strong>Example 2:</strong><br>
+    This is a revised version of my previous submission. Changes include a new
+    header graphic, new font choices for the pop-up box and new icons for the
+    widget on the fourth page.<br><br>
+
+    <strong>Example 3:</strong><br>
+    This is my Round 2 submission. I have implemented all of the feedback you
+    gave me after Round 1 and I hope you like the changes.<br><br>
+  </div>
+</div><!-- END #show submission -->
+
+<div id="typeTooltip" class="tooltip hide">
+  <div class="inner">
+    <header></header>
+    <div class="data">
+      <p class="contestTy"></p>
+    </div>
+    <div class="arrow"></div>
+  </div>
+</div><!-- /.tooltip -->
+<div id="winnerTooltip" class="tooltip hide">
+  <div class="inner">
+    <header></header>
+    <div class="data">
+      <div class="winnerInfo"></div>
+    </div>
+    <div class="arrow alt"></div>
+  </div>
+</div><!-- /.tooltip -->
+<div id="badgeTooltip" class="tooltip hide">
+  <div class="inner">
+    <header></header>
+    <div class="data">
+      <p class="earnedOn"></p>
+    </div>
+    <div class="data">
+      <p class="currentlyEarned"><span></span></p>
+    </div>
+    <div class="arrow"></div>
+  </div>
+</div><!-- /.tooltip -->
+<link rel="stylesheet" id="ng-grid-css" href="Using%20Tries%20%E2%80%93%20topcoder_files/ng-grid.css" type="text/css" media="all">
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/Selectyze.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/tcapi.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/jquery-ui.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/auth0-1.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/default.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/angular.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/angular-animate.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/angular-route.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/underscore.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/restangular.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/ng-grid.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/ng-grid-flexible-height.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/angular-cookies.js"></script>
+<script type="text/javascript" src="Using%20Tries%20%E2%80%93%20topcoder_files/angular-ui-router.js"></script>
+<script>
+  window.prerenderReady = false;
+  function getParameterByName(name, source) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(source || location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  function getHashParameterByName(name, source) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\#&]" + name + "=([^&#]*)"),
+    results = regex.exec(source || location.hash);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+</script>
+
+
+<!-- START Marketo Code -->
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='//munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Using%20Tries%20%E2%80%93%20topcoder_files/munchkin.js" type="text/javascript"></script>
+<script>Munchkin.init('921-UOU-112', {"wsInfo":"jFRS"});</script>
+<!-- END Marketo Code -->
+
+<!-- START Google Retargeting Marketing Code -->
+<script type="text/javascript">
+adroll_adv_id = "LOUA2FVRTJDYZC2BMX72Z7";
+adroll_pix_id = "4XU6H3BYL5EQBFHZM4DIUU";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script>
+<!-- END Google Retargeting Marketing Code -->
+
+<!-- Start of topcoder Zendesk Widget script -->
+<iframe style="width: 0; height: 0; border: 0; position: absolute; top: -9999px" title="" src="javascript:false"></iframe><script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","topcoder.zendesk.com");
+/*]]>*/</script>
+<!-- End of topcoder Zendesk Widget script -->
+
+<script>
+(function() {
+  var headerApp = angular.module('tc.header', [])
+  headerApp.config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+      // Allow same origin resource loads.
+      'self',
+      // Allow loading from subdomains.  Notice the difference between * and **.
+      'http://*.topcoder.com/**',
+      'https://*.topcoder.com/**',
+      'http://*.topcoder-qa.com/**',
+      'https://*.topcoder-qa.com/**',
+      'http://*.topcoder-dev.com/**',
+      'https://*.topcoder-dev.com/**'
+    ]);
+  });
+  headerApp.directive('ngHeaderBootstrap', function(){
+    return {
+      restrict: 'C',
+      templateUrl: '/mf/js/app/header/partials/header-nav.html',
+      controller: function($scope, $timeout){
+        $scope.vm = vm = {};
+        $scope.main = {};
+        $scope.main.menuVisible = false;
+        vm.isAuth = false;
+
+        if (app.isLoggedIn()) {
+          vm.isAuth = true;
+          app.getHandle(function(handle) {
+            $.get(tcconfig.apiURL + '/users/' + handle, function(data) {
+              var photoLink = data['photoLink'];
+              if (photoLink) {
+                if (photoLink.indexOf('//') == -1) {
+                  photoLink = tcconfig.communityURL + data['photoLink']
+                }
+              } else {
+                photoLink = tcconfig.communityURL + '/i/m/nophoto_login.gif';
+              }
+              
+              var color = '';
+              var ratings = data['ratingSummary'];
+              if (ratings) {
+                var maxRating = 0;
+                for (var i = 0; i < ratings.length; i++) {
+                  if (maxRating < ratings[i]['rating']) {
+                    maxRating = ratings[i]['rating'];
+                    color = ratings[i]['colorStyle'].split(": ")[1];
+                  }
+                }
+              } else if (data['isPM'] == true) {
+                color = '#FF9900';
+              }
+              
+              $timeout(function() {
+                vm.handleStyle = { color: color };
+                vm.photoURL = photoLink;
+              });
+            });
+
+            $timeout(function() {
+              vm.userHandle = handle;
+              vm.userMenu = [
+                { 'href': '/my-dashboard', 'text': 'DASHBOARD', 'icon': '/mf/i/nav/dashboard.svg' },
+                { 'href': '/members/' + handle, 'text': 'MY PROFILE', 'icon': '/mf/i/nav/profile.svg' },
+                { 'href': 'https:' + tcconfig.communityURL + '/PactsMemberServlet?module=PaymentHistory&full_list=false', 'text': 'PAYMENTS', 'icon': '/mf/i/nav/wallet.svg' },
+                { 'href': '/settings/profile', 'text': 'SETTINGS', 'icon': '/mf/i/nav/settings.svg' },
+              ];
+            });
+          });
+        }
+
+        vm.menuHeaders = [ 'compete', 'learn', 'community' ];
+        vm.menuLinks =
+        {
+          'compete': [
+              { 'href':  "/challenges/design/active/?pageIndex=1", 'text': 'DESIGN CHALLENGES', 'icon': '/mf/i/nav/track-design.svg' },
+              { 'href':  "/challenges/develop/active/?pageIndex=1", 'text': 'DEVELOPMENT CHALLENGES', 'icon': '/mf/i/nav/track-develop.svg' },
+              { 'href':  "/challenges/data/active/?pageIndex=1", 'text': 'DATA SCIENCE CHALLENGES', 'icon': '/mf/i/nav/track-data.svg' },
+              { 'href':  'https:' + tcconfig.arenaURL, 'text': 'COMPETITIVE PROGRAMMING', 'icon': '/mf/i/nav/track-cp.svg', 'target': '_blank' },
+          ],
+          'learn': [
+              { 'href': '/getting-started/', 'text': 'GETTING STARTED', 'icon': '/mf/i/nav/rocket.svg' },
+              { 'href': '/community/design/', 'text': 'DESIGN', 'icon': '/mf/i/nav/book-design.svg' },
+              { 'href': '/community/development/', 'text': 'DEVELOPMENT', 'icon': '/mf/i/nav/book-develop.svg' },
+              { 'href': '/community/data-science/', 'text': 'DATA SCIENCE', 'icon': '/mf/i/nav/book-data.svg' },
+              { 'href': '/community/competitive%20programming/', 'text': 'COMPETITIVE PROGRAMMING', 'icon': '/mf/i/nav/book-cp.svg' },
+          ],
+          'community': [
+              { 'href': '/community/members/', 'text': 'OVERVIEW', 'icon': '/mf/i/nav/members.svg' },
+              { 'href': '/tco', 'text': 'TCO', 'icon': '/mf/i/nav/tco-generic.svg' },
+              { 'href': '/community/member-programs/', 'text': 'PROGRAMS', 'icon': '/mf/i/nav/programs.svg' },
+              { 'href': 'https://' + tcconfig.forumsAppURL, 'text': 'FORUMS', 'icon': '/mf/i/nav/forums.svg' },
+              { 'href': '/community/statistics/', 'text': 'STATISTICS', 'icon': '/mf/i/nav/statistics.svg' },
+              { 'href': '/community/events/', 'text': 'EVENTS', 'icon': '/mf/i/nav/events.svg' },
+              { 'href': '/blog/', 'text': 'BLOG', 'icon': '/mf/i/nav/blog.svg' }
+          ]
+        };
+
+        vm.checkSubmit = function(ev) {
+          if (ev.keyCode === 13)
+            window.location.replace(tcconfig.mainURL + '/search/members/?q=' + window.encodeURIComponent(vm.searchTerm));
+        }
+
+        vm.isActive = function(href) {
+          if (window.location.pathname == href)
+            return true;
+          return false;
+        }
+
+        vm.login = function() {
+          window.location.href = "/login?next=" + encodeURIComponent(window.location.href);
+        }
+
+        vm.logout = function() {
+          document.cookie = 'tcsso=; path=/; domain=.' + tcconfig.domain + '; expires=' + new Date(0).toUTCString();
+          document.cookie = 'tcjwt=; path=/; domain=.' + tcconfig.domain + '; expires=' + new Date(0).toUTCString();
+          main.menuVisible = vm.isAuth = false;
+          window.location.href = '/logout';
+        }
+      }
+    };
+  });
+
+  angular.bootstrap($('.ng-header-bootstrap'), ['tc.header']);
+})();
+</script>
+
+</div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"496af5ee90","applicationID":"5697815","transactionName":"ZlcBbBQAChBSARIKXV8dIlsSCAsNHBYDDkJdUxddSw4SBkEUDwZFHEUKXAEEEApJBwI=","queueTime":0,"applicationTime":74,"atts":"ShACGlwaGR4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div><iframe style="border: medium none; background: transparent none repeat scroll 0% 0%; z-index: 999999; transform: translateZ(0px); position: fixed; opacity: 0; right: 0px; bottom: 0px; width: 357px; margin-left: 15px; margin-right: 15px; margin-top: 0px; height: 476px; transition-property: none; transition-timing-function: unset; top: -9999px;" id="ticketSubmissionForm" class="zEWidget-ticketSubmissionForm" data-ze-reactid=".0"></iframe></div><div><iframe style="border: medium none; background: transparent none repeat scroll 0% 0%; z-index: 999998; transform: translateZ(0px); position: fixed; opacity: 1; right: 0px; bottom: 0px; width: 150px; height: 47px; margin: 10px 20px;" id="launcher" class="zEWidget-launcher zEWidget-launcher--active" data-ze-reactid=".1"></iframe></div><div><iframe style="border: medium none; background: transparent none repeat scroll 0% 0%; z-index: 2147483647; transform: translateZ(0px); position: fixed; opacity: 0; right: 0px; bottom: 0px; left: 50%; margin-left: -310px; margin-bottom: 15px; width: 640px; margin-top: 0px; height: 181px; transition-property: none; transition-timing-function: unset; top: -9999px;" id="nps" class="zEWidget-nps" data-ze-reactid=".2"></iframe></div><div><iframe style="border: medium none; background: transparent none repeat scroll 0% 0%; z-index: 2147483647; transform: translateZ(0px); position: fixed; opacity: 0; right: 0px; top: -230px; margin-right: 15px; margin-top: 0px; height: 180px; width: 395px; transition-property: none; transition-timing-function: unset;" id="ipm" class="zEWidget-ipm" data-ze-reactid=".3"></iframe></div><div style="display: none;" id="zenmate-widget"><div id="message" class="">
+  <div id="plain-widget">
+    <img class="logo" src="Using%20Tries%20%E2%80%93%20topcoder_files/zenmateLogoBlack.png" srcset="resource://firefox-at-zenmate-dot-com/data/images/zenmateLogoBlack@2x.png 2x">
+    <hr>
+    <h1 id="headline">You're protected by ZenMate</h1>
+    <div id="description">Buy ZenMate Premium for only 6.49 with turbo speed for HD quality streaming!</div>
+    <button id="submit-btn">Get Premium</button>
+  </div>
+
+  <iframe id="iframe-widget" allowfullscreen="" src="Using%20Tries%20%E2%80%93%20topcoder_files/a.html" frameborder="0" height="250" width="300"></iframe>
+
+  <button id="dismiss-btn">Remind me later</button>
+</div>
+
+<div class="active" title="You're protected by ZenMate" id="toggle-btn"></div>
+</div></body></html>

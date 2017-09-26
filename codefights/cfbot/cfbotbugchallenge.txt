@@ -1,0 +1,44 @@
+std::vector<std::string> ans, taskMaker(std::vector<std::string> source, int challengeId) {
+    for(std::string c:source){
+        std::string a=c;
+        int l=a.size();
+        int f=1;
+        int j=0;
+        int left,right;
+        for(j=0;j+4<l;++j){
+            if(a[j]=='/' && a[j+1]=='/' && a[j+2]=='D' && a[j+3]=='B' && a[j+4]==' '){
+                int n=0;
+                int kkk=j+5;
+                while(a[kkk]>='0' && a[kkk]<='9'){
+                    n=n*10+a[kkk]-'0';
+                    kkk++;
+                }
+                left=j;
+                right=kkk+1;
+                
+                if(n==challengeId){
+                    f=2;
+                    break;
+                }
+                else{
+                    f=0;
+                    break;
+                }
+            }
+        }
+        if(f==1)ans.push_back(a);
+        else if(f==0)continue;
+            else if(f==2){
+           std::string t="";
+            for(int kk=0;kk<a.size();++kk){
+                if(kk>=left && kk<=right)continue;
+                else{
+                    t+=a[kk];
+                }
+            }
+            ans[ans.size()-1]=t;
+        }
+    }
+    return ans;
+}
+

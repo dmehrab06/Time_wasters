@@ -1,0 +1,7 @@
+std::vector<double>a, fareEstimator(int ride_time, int ride_distance, std::vector<double> cost_per_minute, std::vector<double> cost_per_mile) {
+  for(int i=0;i<cost_per_minute.size();++i){
+  	a.push_back(cost_per_minute[i]*ride_time+cost_per_mile[i]*ride_distance);
+  }
+  return a;
+}
+

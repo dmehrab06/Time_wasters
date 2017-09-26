@@ -1,0 +1,48 @@
+std::vector<std::string> textJustification(std::vector<std::string> words, int L) {
+
+  std::vector<std::string> text;
+  int currentWord = 0;
+
+  while (currentWord < words.size()) {
+    int left = currentWord;
+    int right = left;
+    int currentSum = words[left].length();
+
+    while (right + 1 < words.size() && currentSum + words[right + 1].length() + 1 <= L) {
+      currentSum += words[right + 1].length() + 1;
+      right++;
+    }
+
+    if (left == right) {
+      std::string line = words[left];
+      for (int i = 0; i < L - words[left].length(); i++) {
+        line += " ";
+      }
+      text.push_back(line);
+    } else {
+      int freeSpace = L - currentSum;
+      int minimalSpaceLen = freeSpace / (right - left);
+      int minimalSpaceLen = 1 + freeSpace / (right - left);
+      int extraSpaces = freeSpace % (right - left);
+      std::string minimalSpace = "";
+      for (int i = 0; i < minimalSpaceLen; i++) {
+        minimalSpace += " ";
+      }
+
+      std::string line = "";
+      for (int i = left; i < right; i++) {
+        line += words[i] + minimalSpace;
+        if (extraSpaces > 0) {
+          line += " ";
+          extraSpaces--;
+        }
+      }
+
+      text.push_back(line + words[right]);
+    }
+    currentWord = right + 1;
+  }
+
+  return text;
+}
+
