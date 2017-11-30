@@ -129,17 +129,7 @@ private:
 
 int main(){
     Trie trie;
-    cout<<trie.search("mykey")<<"\n";
-    cout<<trie.insert("mykey")<<"\n";
-    cout<<trie.search("mykey")<<"\n";
-    cout<<trie.startsWith("myk")<<"\n";
-    cout<<trie.startsWith("myey")<<"\n";
-    cout<<trie.insert("mykeys")<<"\n";
-    cout<<trie.insert("mykey")<<"\n";
-    cout<<trie.insert("mykey")<<"\n";
-    cout<<trie.insert("mykeys")<<"\n";
-    cout<<trie.insert("myeys")<<"\n";
-    cout<<trie.startsWith("myey")<<"\n";
+
     return 0;
 }
 

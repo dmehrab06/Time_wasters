@@ -44,6 +44,68 @@ using namespace __gnu_pbds;
 
 //typedef tree < int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
 
+int vals[5];
+int perm[6][3] = {{1,2,3},{1,3,2},{2,1,3},{2,3,1},{3,1,2},{3,2,1}};
+int res[1024];
+
+vector<int>corr;
+
+void init(){
+    FREP(i,0,1023)res[i]=i;
+    vals[1] = 0;
+    vals[2] = -1;
+    vals[3] = 0;
+}
+
+char op[3];
+
+int ops(int val, int idx, int val2){
+    if(idx==1)return val|=val2;
+    if(idx==2)return val&=val2;
+    if(idx==3)return val^=val2;
+}
+
+bool check(int permidx){
+    FREP(k,0,1023){
+        int val = k;
+        FREP(j,0,2){
+            val = ops(val,perm[permidx][j],vals[perm[permidx][j]]);
+        }
+        if(val!=res[k])return false;
+    }
+    return true;
+}
+
 int main(){
+    int n;
+    init();
+    scanf("%d",&n);
+    FREP(i,1,n){
+        int vv;
+        scanf("%s %d",op,&vv);
+        if(op[0]=='|'){
+            vals[1]|=vv;
+            FREP(k,0,1023){
+                res[k]|=vv;
+            }
+        }
+        else if(op[0]=='&'){
+            vals[2]&=vv;
+            FREP(k,0,1023){
+                res[k]&=vv;
+            }
+        }
+        else{
+            vals[3]^=vv;
+            FREP(k,0,1023){
+                res[k]^=vv;
+            }
+        }
+    }
+    FREP(i,0,5){
+        if(check(i)){
+            cout<<"working for "<<i<<"\n";
+        }
+    }
     return 0;
 }
