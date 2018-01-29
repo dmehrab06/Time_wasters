@@ -1,0 +1,100 @@
+/*-------property of the half blood prince-----*/
+
+#include <bits/stdc++.h>
+//#include <dirent.h>
+//#include <ext/pb_ds/assoc_container.hpp>
+//#include <ext/pb_ds/tree_policy.hpp>
+//#include <ext/pb_ds/detail/standard_policies.hpp>
+#define MIN(X,Y) X<Y?X:Y
+#define MAX(X,Y) X>Y?X:Y
+#define ISNUM(a) ('0'<=(a) && (a)<='9')
+#define ISCAP(a) ('A'<=(a) && (a)<='Z')
+#define ISSML(a) ('a'<=(a) && (a)<='z')
+#define ISALP(a) (ISCAP(a) || ISSML(a))
+#define MXX 10000000000
+#define MNN -MXX
+#define ISVALID(X,Y,N,M) ((X)>=1 && (X)<=(N) && (Y)>=1 && (Y)<=(M))
+#define LLI long long int
+#define VI vector<int>
+#define VLLI vector<long long int>
+#define MII map<int,int>
+#define SI set<int>
+#define PB push_back
+#define MSI map<string,int>
+#define PII pair<int,int>
+#define PLLI pair<LLI,LLI>
+#define PDD pair<double,double>
+#define FREP(i,I,N) for(int (i)=(int)(I);(i)<=(int)(N);(i)++)
+#define eps 0.0000000001
+#define RFREP(i,N,I) for(int (i)=(int)(N);(i)>=(int)(I);(i)--)
+#define SORTV(VEC) sort(VEC.begin(),VEC.end())
+#define SORTVCMP(VEC,cmp) sort(VEC.begin(),VEC.end(),cmp)
+#define REVV(VEC) reverse(VEC.begin(),VEC.end())
+#define INRANGED(val,l,r) (((l)<(val) || fabs((val)-(l))<eps) && ((val)<(r) || fabs((val)-(r))<eps))
+#define INRANGEI(val,l,r) ((val)>=(l) && (val)<=(r))
+#define MSET(a,b) memset(a,b,sizeof(a))
+using namespace std;
+//using namespace __gnu_pbds;
+
+//int dx[]={1,0,-1,0};int dy[]={0,1,0,-1}; //4 Direction
+//int dx[]={1,1,0,-1,-1,-1,0,1};int dy[]={0,1,1,1,0,-1,-1,-1};//8 direction
+//int dx[]={2,1,-1,-2,-2,-1,1,2};int dy[]={1,2,2,1,-1,-2,-2,-1};//Knight Direction
+//int dx[]={2,1,-1,-2,-1,1};int dy[]={0,1,1,0,-1,-1}; //Hexagonal Direction
+
+
+//typedef tree < int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+
+LLI gcd(LLI a, LLI b){
+    if(a==0)return b;
+    return gcd(b%a,a);
+}
+
+int main(){
+    int t;
+    scanf("%d",&t);
+    while(t--){
+        int n;
+        scanf("%d",&n);
+        set< pair<LLI,LLI> > allps;
+        vector < pair<LLI,LLI> >allpv;
+        LLI xx = 0;
+        LLI yy = 0;
+        FREP(i,1,n){
+            LLI x,y;
+            scanf("%lld %lld",&x,&y);
+            xx+=x;
+            yy+=y;
+            allps.insert(make_pair(x,y));
+            allpv.PB(make_pair(x,y));
+        }
+        int tempxn = n, tempyn = n;
+        LLI gg1 = gcd(xx,n); LLI gg2=gcd(yy,n);
+        xx/=gg1; tempxn/=gg1; yy/=gg2; tempyn/=gg2;
+        if(tempxn<=2 && tempyn<=2){
+            int f = 1;
+            FREP(i,0,allpv.size()-1){
+                pair<LLI,LLI>curp = allpv[i];
+                if(allps.find(curp)==allps.end())continue;
+                LLI px = curp.first; LLI py = curp.second;
+                LLI qx =  (((LLI)2*xx)/tempxn)-px;
+                LLI qy =  (((LLI)2*yy)/tempyn)-py;
+                if(allps.find(make_pair(qx,qy))==allps.end()){
+                    f=0;
+                    break;
+                }
+                pair<LLI,LLI>curq = make_pair(qx,qy);
+                if(allps.find(curp)!=allps.end())allps.erase(curp);
+                if(allps.find(curq)!=allps.end())allps.erase(curq);
+            }
+            if(f){
+                printf("yes\n");
+            }
+            else{
+                printf("no\n");
+            }
+        }
+        else{
+            printf("no\n");
+        }
+    }
+}
