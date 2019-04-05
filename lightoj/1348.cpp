@@ -2,9 +2,9 @@
 
 #include <bits/stdc++.h>
 #include <dirent.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-#include <ext/pb_ds/detail/standard_policies.hpp>
+//#include <ext/pb_ds/assoc_container.hpp>
+//#include <ext/pb_ds/tree_policy.hpp>
+//#include <ext/pb_ds/detail/standard_policies.hpp>
 #define MIN(X,Y) X<Y?X:Y
 #define MAX(X,Y) X>Y?X:Y
 #define ISNUM(a) ('0'<=(a) && (a)<='9')
@@ -34,7 +34,7 @@
 #define INRANGEI(val,l,r) ((val)>=(l) && (val)<=(r))
 #define MSET(a,b) memset(a,b,sizeof(a))
 using namespace std;
-using namespace __gnu_pbds;
+//using namespace __gnu_pbds;
 
 //int dx[]={1,0,-1,0};int dy[]={0,1,0,-1}; //4 Direction
 //int dx[]={1,1,0,-1,-1,-1,0,1};int dy[]={0,1,1,1,0,-1,-1,-1};//8 direction
@@ -44,188 +44,197 @@ using namespace __gnu_pbds;
 
 //typedef tree < int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
 
-#define N 30005
-#define LN 18
+#define MAXN 30005
+#define MXLOG 20
 
-int st[5*N];
-int nodeval[N];
-int baseArray[N];
+int segbasearray[MAXN];
+int seg[4*MAXN];
+int posbase[MAXN];
+int ancestor[MXLOG][MAXN];
+int depth[MAXN];
+int sz[MAXN];
+int par[MAXN];
+int chainno[MAXN];
+int chainhead[MAXN];
 
-void init(int node, int b, int e){
-    if(b>e)return;
-    if(b==e){
-        st[node]=baseArray[b];
-        return;
-    }
-    int mid = (b+e)/2;
-    int lnode = node<<1; int rnode = lnode+1;
-    init(lnode,b,mid); init(rnode,mid+1,e);
-    st[node]=st[lnode]+st[rnode];
+int curbase = 1;
+int curchain = 1;
+
+vector < VI > g;
+
+int genie[MAXN];
+
+void init(){
+    g.clear();
+    MSET(ancestor,-1);
+    MSET(par,-1);
+    MSET(chainhead,-1);
+    curbase = 1, curchain = 1;
 }
 
-void update(int node, int b, int e, int idx, int val){
-    if(b>e)return;
-    if(b==idx && b==e){
-        baseArray[b]=val;
-        st[node]=nodeval[b];
-        return;
+void HLD(int curnode, int cost, int prev){
+    if(chainhead[curchain]==-1){
+        chainhead[curchain] = curnode;
     }
-    int mid = (b+e)/2;
-    int lnode = node<<1; int rnode = lnode+1;
-    update(lnode,b,mid,idx,val); update(rnode,mid+1,e,idx,val);
-    st[node]=st[lnode]+st[rnode];
+    chainno[curnode] = curchain;
+    segbasearray[curbase] = cost;
+    posbase[curnode] = curbase;
+    curbase++;
+
+    int mxsz = -1, gov = -1, ww = -1;
+    FREP(i,0,g[curnode].size()-1){
+        int v = g[curnode][i];
+        if(v==prev)continue;
+        if(sz[v]>mxsz){
+            mxsz = sz[v];
+            gov = v;
+            ww = genie[v];
+        }
+    }
+
+    if(gov!=-1){
+        HLD(gov,ww,curnode);
+    }
+
+    FREP(i,0,g[curnode].size()-1){
+        int v = g[curnode][i];
+        if(v==prev || v==gov)continue;
+        curchain++;
+        HLD(v,genie[v],curnode);
+    }
+
 }
 
-int query(int node, int b, int e, int i, int j){
-    if(b>j || e<i)return 0;
-    if(b>=i && e<=j){
-        return st[node];
-    }
-    int mid = (b+e)/2;
-    int lnode = node<<1; int rnode = lnode+1;
-    int lans = query(lnode,b,mid,i,j); int rans = query(rnode,mid+1,e,i,j);
+void build(int b, int e, int nd){
+    if(b>e)return;
+    if(b==e){seg[nd] = segbasearray[b];return;}
+    int m = (b+e)>>1;  int ln = nd<<1; int rn = ln+1;
+    build(b,m,ln); build(m+1,e,rn);
+    seg[nd] = seg[ln]+seg[rn];
+}
+
+void update(int b, int e, int idx, int val, int nd){
+    if(b>idx || e<idx)return;
+    if(b==e && b==idx){segbasearray[b] = val; seg[nd] = segbasearray[b];return;}
+    int m = (b+e)>>1;  int ln = nd<<1; int rn = ln+1;
+    update(b,m,idx,val,ln); update(m+1,e,idx,val,rn);
+    seg[nd] = seg[ln]+seg[rn];
+}
+
+int query(int b, int e, int l, int r, int nd){
+    if( b>e ||  b>r || e<l)return 0;
+    if(b>=l && e<=r){return seg[nd];}
+    int m = (b+e)>>1;  int ln = nd<<1; int rn = ln+1;
+    int lans = query(b,m,l,r,ln); int rans = query(m+1,e,l,r,rn);
     return lans+rans;
 }
 
-int depth[N]; int pa[LN][N]; int subsize[N];
-vector < VI >adj;
-int ptr,chainNo;
-int chainHead[N], chainInd[N], posInBase[N];
-
-void change(int u, int val){
-    update(1,0,ptr,posInBase[u],val);
+int HLDQUERY(int u, int v, int n){
+    //v is above u
+    //cout<<u<<" "<<v<<"\n";
+    //cout<<"chain: "<<chainno[u]<<" "<<chainno[v]<<"\n";
+    if(chainno[u]==chainno[v]){
+        int pu = posbase[u]; int pv = posbase[v];
+        return query(1,n,pv,pu,1);
+    }
+    else{
+        int hd = chainhead[chainno[u]];
+        int phead = posbase[hd]; int pu = posbase[u];
+        int tans = query(1,n,phead,pu,1);
+        int t2ans = HLDQUERY(par[hd],v,n);
+        return tans+t2ans;
+    }
 }
 
-int query_up(int u, int ancestor){
-    if(u == ancestor) return nodeval[u]; // Trivial
-	int uchain, achain = chainInd[ancestor], ans = 0;
-	while(1) {
-		uchain = chainInd[u];
-		if(uchain == achain) {
-			if(u==ancestor){
-                ans = nodeval[u];
-                break;
-			}
-			ans+=query(1, 0, ptr, posInBase[ancestor], posInBase[u]);
-			break;
-		}
-		ans+=query(1, 0, ptr, posInBase[chainHead[uchain]], posInBase[u]);
-		u = chainHead[uchain]; // move u to u's chainHead
-		u = pa[0][u]; //Then move to its parent, that means we changed chains
-	}
-	return ans;
+
+void dfs(int cur, int p, int _d = 0){
+    sz[cur]  = 1;
+    par[cur] = p;
+    depth[cur] = _d;
+    FREP(i,0,g[cur].size()-1){
+        int v = g[cur][i];
+        if(v==p)continue;
+        dfs(v,cur,_d+1);
+        sz[cur]+=sz[v];
+    }
+    return;
 }
 
-int LCA(int u, int v) {
+int LCA(int u, int v, int ln=18){ //finds LCA of U and V
 	if(depth[u] < depth[v]) swap(u,v);
-	int diff = depth[u] - depth[v];
-	for(int i=0; i<LN; i++) if( (diff>>i)&1 ) u = pa[i][u];
+	int diff = depth[u]-depth[v];
+	FREP(i,0,(ln-1)){
+        if((diff>>i)&1){
+            u=ancestor[i][u];
+        }
+	}
 	if(u == v) return u;
-	for(int i=LN-1; i>=0; i--) if(pa[i][u] != pa[i][v]) {
-		u = pa[i][u];
-		v = pa[i][v];
+	RFREP(i,(ln-1),0){
+        if(ancestor[i][u]!=ancestor[i][v]){
+            u=ancestor[i][u];
+            v=ancestor[i][v];
+        }
 	}
-	return pa[0][u];
+	return ancestor[0][u];
 }
 
-void mainquery(int u, int v) {
-	int lca = LCA(u, v);
-	int ans1 = query_up(u, lca); // One part of path
-	int ans2 = query_up(v, lca); // another part of path
-	int ans3 = query_up(lca,lca);
-	printf("%d\n", ans1+ans2-ans3);
-}
-
-void HLD(int curNode, int prev) {
-	if(chainHead[chainNo] == -1) {
-		chainHead[chainNo] = curNode; // Assign chain head
-	}
-	chainInd[curNode] = chainNo;
-	posInBase[curNode] = ptr; // Position of this node in baseArray which we will use in Segtree
-	baseArray[ptr++] = nodeval[curNode];
-
-	int sc = -1;
-	// Loop to find special child
-	for(int i=0; i<adj[curNode].size(); i++) if(adj[curNode][i] != prev) {
-		if(sc == -1 || subsize[sc] < subsize[adj[curNode][i]]) {
-			sc = adj[curNode][i];
-		}
-	}
-
-	if(sc != -1) {
-		// Expand the chain
-		HLD(sc, curNode);
-	}
-
-	for(int i=0; i<adj[curNode].size(); i++) if(adj[curNode][i] != prev) {
-		if(sc != adj[curNode][i]) {
-			// New chains at each normal node
-			chainNo++;
-			HLD(adj[curNode][i], curNode);
-		}
-	}
-}
-
-void inp_tree(int n){
-    adj.clear();
-    FREP(i,1,(n+3)){
-        VI line;
-        adj.PB(line);
+void precalc(int n, int ln = 18){ //preprocessing before LCA, has to be done after DFS
+    FREP(j,1,n){
+        ancestor[0][j]=par[j];
     }
-    FREP(i,1,n)scanf("%d",&nodeval[i]);
-    FREP(i,1,(n-1)){
-        int u,v;
-        scanf("%d %d",&u,&v);
-        adj[u].PB(v);
-        adj[v].PB(u);
+    FREP(i,1,(ln-1)){
+        FREP(j,1,n){
+            if(ancestor[i-1][j]!=-1){
+                ancestor[i][j]=ancestor[i-1][ancestor[i-1][j]];
+            }
+        }
     }
 }
 
-void dfs(int cur, int prev, int _depth=0) {
-	pa[0][cur] = prev;
-	depth[cur] = _depth;
-	subsize[cur] = 1;
-	for(int i=0; i<adj[cur].size(); i++)
-		if(adj[cur][i] != prev) {
-			//otherEnd[indexx[cur][i]] = adj[cur][i];
-			dfs(adj[cur][i], cur, _depth+1);
-			subsize[cur] += subsize[adj[cur][i]];
-		}
+int solve(int p, int q, int n){
+    int lca = LCA(p,q);
+    //cout<<"lca of "<<p<<" and q is "<<lca<<"\n";
+    int lans = HLDQUERY(p,lca,n);
+    int rans = HLDQUERY(q,lca,n);
+    return lans+rans-HLDQUERY(lca,lca,n);
 }
 
-void initeverything(int n){
-    chainNo = 0;
-    for(int i=0; i<n; i++) {
-        chainHead[i] = -1;
-        for(int j=0; j<17; j++) pa[j][i] = -1;
-    }
+void change(int u, int n, int newval){
+    int pos  = posbase[u];
+    update(1,n,pos,newval,1);
 }
 
 int main(){
     int t;
     scanf("%d",&t);
     FREP(cs,1,t){
+        init();
         int n;
         scanf("%d",&n);
-        initeverything(n);
-        inp_tree(n);
-        dfs(0,-1);
-        HLD(0,-1);
-        init(1,0,ptr);
+        FREP(i,1,n)scanf("%d",&genie[i]);
+        VI line; FREP(i,1,(n+3))g.PB(line);
+        FREP(i,1,(n-1)){
+            int u,v;
+            scanf("%d %d",&u,&v);
+            g[u+1].PB(v+1);
+            g[v+1].PB(u+1);
+        }
+        dfs(1,-1); precalc(n); HLD(1,genie[1],-1); build(1,n,1);
         int q;
         scanf("%d",&q);
+        printf("Case %d:\n",cs);
         FREP(i,1,q){
             int type;
             scanf("%d",&type);
             if(type==0){
                 int u,v;
                 scanf("%d %d",&u,&v);
-                mainquery(u,v);
+                printf("%d\n",solve(u+1,v+1,n));
             }
             else{
                 int u,val;
                 scanf("%d %d",&u,&val);
-                change(u,val);
+                change(u+1,n,val);
             }
         }
     }

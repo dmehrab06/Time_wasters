@@ -1,48 +1,55 @@
-#define MAX 600000000
-#include <stdio.h>
- 
-long long int counzero(long long int n){
-    long long int zero=0;
-    while(n){
-        n=n/5;
-        zero+=n;
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/detail/standard_policies.hpp>
+#define MAXN 10003
+#define MAXIT 20
+#define PI acos(-1.0)
+#define eps 1e-5
+
+using namespace std;
+using namespace __gnu_pbds;
+
+typedef tree < pair<int,int>, null_type, less< pair<int,int> >, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+
+long long getzero(long long v){
+    long long z = 0;
+    long long c = 5;
+    while(c<=v){
+        z = z+v/c;
+        c = c*5;
     }
-    return zero;
+    return z;
 }
-long long int bin_search(long long int low,long long int high, long long int given){
-    long long int mid;
-    while((high-low)>1){
-        mid=(high+low)/2;
-        long long int zero;
-        zero=counzero(mid);
-        if(zero<given){
-            low=mid;
-        }
-        else{
-            high=mid;
-        }
-    }
-    return high;
- 
-}
+
 int main(){
     int t;
-    int tt=1;
     scanf("%d",&t);
-    while(t--){
-        long long int n;
-        scanf("%lld",&n);
-        printf("Case %d: ",tt);
-        long long int ans;
-        ans=bin_search(1,MAX,n);
-        long long int chk=counzero(ans);
-        if(chk==n){
-            printf("%lld\n",ans);
+    //cout<<"hello "<<asin(1.33333/(4.00-1.33333))*2.0*6<<"\n";
+    //cout<<2.0*PI<<"\n";
+    for(int cs = 1; cs<=t; ++cs){
+        int Q;
+        scanf("%d",&Q);
+        long long lo = 0, hi = 2e18;
+        while(lo+1<hi){
+            long long mid = lo + (hi-lo)/2;
+            if(getzero(mid)<Q){
+                lo = mid;
+            }
+            else{
+                hi = mid;
+            }
+        }
+        if(getzero(lo)==Q){
+            printf("Case %d: %lld\n",cs,lo);    
+        }
+        else if(getzero(hi)==Q){
+            printf("Case %d: %lld\n", cs,hi);
         }
         else{
-            printf("impossible\n");
+            printf("Case %d: impossible\n",cs);
         }
-        tt++;
+        
     }
     return 0;
 }
